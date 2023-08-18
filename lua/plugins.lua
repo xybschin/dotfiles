@@ -6,6 +6,13 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 })
 
 return require("packer").startup(function(use)
+  -- Packer
+  use("wbthomason/packer.nvim")
+
+  -- Common Utilities
+  use("nvim-lua/plenary.nvim")
+
+  -- Show keybinds
   use({
     "folke/which-key.nvim",
     config = function()
@@ -15,25 +22,41 @@ return require("packer").startup(function(use)
     end
   })
 
-  use("voldikss/vim-floaterm")
-  use("github/copilot.vim")
-  use("onsails/lspkind-nvim")
-  use("wbthomason/packer.nvim")
-  use("kyazdani42/nvim-web-devicons")
-  use("windwp/nvim-ts-autotag")
-  use("L3MON4D3/LuaSnip")
-  use("nvim-lua/plenary.nvim")
-
   use({
-    "rose-pine/neovim",
-    as = "rose-pine",
+    "m4xshen/autoclose.nvim",
+    config = function()
+      require("autoclose").setup()
+    end
   })
 
+  -- Window management
+  use("voldikss/vim-floaterm")
+
+  -- Copilot
+  use("github/copilot.vim")
+
+  -- Picotograms for LSP
+  use("onsails/lspkind-nvim")
+
+  -- Icons
+  use("kyazdani42/nvim-web-devicons")
+
+  -- Snippet Engine
+  use("L3MON4D3/LuaSnip")
+
+  -- LuaSnip completion Source for nvim-cmp
   use({
     "saadparwaiz1/cmp_luasnip",
     after = "nvim-cmp"
   })
 
+  -- Color scheme
+  use({
+    "rose-pine/neovim",
+    as = "rose-pine",
+  })
+
+  -- File explorer
   use({
     "nvim-tree/nvim-tree.lua",
     config = function()
@@ -41,20 +64,7 @@ return require("packer").startup(function(use)
     end
   })
 
-  use({
-    'jose-elias-alvarez/null-ls.nvim',
-    config = function()
-      require("configs.null-ls")
-    end
-  })
-
-  use({
-    'MunifTanjim/prettier.nvim',
-    config = function()
-      require("configs.prettier")
-    end
-  })
-
+  -- Statusline
   use({
     "nvim-lualine/lualine.nvim",
     config = function()
@@ -62,6 +72,7 @@ return require("packer").startup(function(use)
     end,
   })
 
+  -- Syntax highlighting
   use({
     "nvim-treesitter/nvim-treesitter",
     run = function()
@@ -73,6 +84,7 @@ return require("packer").startup(function(use)
     end,
   })
 
+  -- Configs for Nvim LSP
   use({
     "neovim/nvim-lspconfig",
     config = function()
@@ -80,6 +92,7 @@ return require("packer").startup(function(use)
     end,
   })
 
+  -- Autocomplete
   use({
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
@@ -88,10 +101,12 @@ return require("packer").startup(function(use)
     end
   })
 
+  -- Autocomplete Sources
   use({
     "hrsh7th/cmp-buffer",
     after = "nvim-cmp",
   })
 
+  -- Autocomplete Sources
   use("hrsh7th/cmp-nvim-lsp")
 end)
