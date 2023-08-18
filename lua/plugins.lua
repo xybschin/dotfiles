@@ -6,14 +6,19 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 })
 
 return require("packer").startup(function(use)
+  use("voldikss/vim-floaterm")
   use("github/copilot.vim")
   use("onsails/lspkind-nvim")
   use("wbthomason/packer.nvim")
-  use("rebelot/kanagawa.nvim")
   use("kyazdani42/nvim-web-devicons")
   use("windwp/nvim-ts-autotag")
   use("L3MON4D3/LuaSnip")
   use("nvim-lua/plenary.nvim")
+
+  use({
+    "rose-pine/neovim",
+    as = "rose-pine",
+  })
 
   use({
     "saadparwaiz1/cmp_luasnip",
