@@ -23,6 +23,14 @@ return require("packer").startup(function(use)
   })
 
   use({
+    "dense-analysis/ale",
+    config = function()
+      require("configs.ale")
+    end
+  })
+
+  --Autoclose brackets
+  use({
     "m4xshen/autoclose.nvim",
     config = function()
       require("autoclose").setup()
