@@ -11,6 +11,7 @@ require("nvim-tree").setup({
       "^.git$",
       ".cache",
       ".DS_Store",
+      "bun.lockdb",
     },
   },
 })
