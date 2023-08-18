@@ -1,5 +1,7 @@
 local keymap = vim.keymap
 
+keymap.set("n", "K", require("hover").hover, {desc = "hover.nvim"})
+keymap.set("n", "gK", require("hover").hover_select, {desc = "hover.nvim (select)"})
 keymap.set("n", "<Space>ff", ":ALEFix<Return>", { noremap = true, silent = true })
 keymap.set("n", "<Space>lf", ":ALELint<Return>", { noremap = true, silent = true })
 keymap.set("n", "<Space>fi", ":Telescope find_files<Return>", { noremap = true, silent = true })
