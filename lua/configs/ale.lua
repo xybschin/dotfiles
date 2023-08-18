@@ -1,8 +1,10 @@
 vim.g.ale_fix_on_save = 1
-vim.g.ale_lint_on_save = 1
+vim.g.ale_floating_preview = 1
+vim.g.ale_hover_to_floating_preview = 1
+vim.g.ale_floating_window_border = { '│', '─', '╭', '╮', '╯', '╰', '│', '─' }
 
 vim.g.ale_linters = {
-  ['javascript'] = { 'eslint', '' },
+  ['javascript'] = { 'eslint' },
   ['typescript'] = { 'eslint' },
   ['javascriptreact'] = { 'eslint' },
   ['typescriptreact'] = { 'eslint' },
@@ -16,8 +18,8 @@ vim.g.ale_linters = {
 }
 
 vim.g.ale_fixers = {
-  ['javascript'] = { 'prettier' },
-  ['typescript'] = { 'prettier' },
+  ['javascript'] = { 'prettier', 'eslint' },
+  ['typescript'] = { 'prettier', 'eslint' },
   ['javascriptreact'] = { 'prettier' },
   ['typescriptreact'] = { 'prettier', 'eslint' },
   ['css'] = { 'prettier' },
