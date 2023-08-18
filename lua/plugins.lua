@@ -6,6 +6,14 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 })
 
 return require("packer").startup(function(use)
+  use({
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 100
+      require("configs.which-key")
+    end
+  })
   use("voldikss/vim-floaterm")
   use("github/copilot.vim")
   use("onsails/lspkind-nvim")
