@@ -14,6 +14,7 @@ return require("packer").startup(function(use)
       require("configs.which-key")
     end
   })
+
   use("voldikss/vim-floaterm")
   use("github/copilot.vim")
   use("onsails/lspkind-nvim")
@@ -35,17 +36,23 @@ return require("packer").startup(function(use)
 
   use({
     "nvim-tree/nvim-tree.lua",
-    config = function() require("configs.nvim-tree") end
+    config = function()
+      require("configs.nvim-tree")
+    end
   })
 
   use({
     'jose-elias-alvarez/null-ls.nvim',
-    config = function() require("configs.null-ls") end
+    config = function()
+      require("configs.null-ls")
+    end
   })
 
   use({
     'MunifTanjim/prettier.nvim',
-    config = function() require("configs.prettier") end
+    config = function()
+      require("configs.prettier")
+    end
   })
 
   use({
