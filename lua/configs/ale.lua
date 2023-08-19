@@ -1,6 +1,4 @@
 vim.g.ale_fix_on_save = 1
-vim.g.ale_float_preview = 1
-vim.g.ale_floating_window_border = { '│', '─', '╭', '╮', '╯', '╰', '│', '─' }
 
 vim.g.ale_linters = {
   ['javascript'] = { 'eslint' },

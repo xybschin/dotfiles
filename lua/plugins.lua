@@ -19,13 +19,27 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-
 return require("packer").startup(function(use)
   -- Packer
   use("wbthomason/packer.nvim")
 
+  -- Bracket Utilities
+  use("tpope/vim-surround")
+
   -- Common Utilities
   use("nvim-lua/plenary.nvim")
+
+  -- Telescope
+  use({
+    "nvim-telescope/telescope.nvim",
+    requires = {
+      { "nvim-lua/plenary.nvim" },
+
+    },
+    config = function()
+      require("configs.telescope")
+    end,
+  })
 
   -- Show keybinds
   use({
@@ -37,6 +51,7 @@ return require("packer").startup(function(use)
     end
   })
 
+  -- Linting and Formatting
   use({
     "dense-analysis/ale",
     config = function()
@@ -51,6 +66,18 @@ return require("packer").startup(function(use)
       require("autoclose").setup()
     end
   })
+
+  use {
+    "amrbashir/nvim-docs-view",
+    opt = true,
+    cmd = { "DocsViewToggle" },
+    config = function()
+      require("docs-view").setup {
+        position = "right",
+        width = 60,
+      }
+    end
+  }
 
   -- Window management
   use("voldikss/vim-floaterm")
@@ -74,8 +101,13 @@ return require("packer").startup(function(use)
   })
 
   -- Color scheme
-  use({ 'projekt0n/github-nvim-theme' })
+  use({
+    'ray-x/aurora',
+    lazy = false,
+    priority = 1000,
+  })
 
+  use("rebelot/kanagawa.nvim")
 
   -- File explorer
   use({
@@ -87,11 +119,20 @@ return require("packer").startup(function(use)
 
   -- Statusline
   use({
-    "nvim-lualine/lualine.nvim",
+    "vim-airline/vim-airline",
     config = function()
-      require("configs.lualine")
+      require("configs.airline")
     end,
   })
+
+  -- Statusline Themes
+  use({
+    "vim-airline/vim-airline-themes",
+    after = "vim-airline",
+  })
+
+  -- Show open Buffers in Statusline
+  use("bling/vim-bufferline")
 
   -- Syntax highlighting
   use({
