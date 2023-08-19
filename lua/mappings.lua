@@ -26,6 +26,8 @@ keymap.set("n", "<Space>lq", ":FloatermKill<Return>", { noremap = true, silent =
 
 -- Documentation
 keymap.set("n", "<Space>dt", ":DocsViewToggle<Return>", { noremap = true, silent = true })
+keymap.set("n", "<Space>du", ":DocsViewUpdate<Return>", { noremap = true, silent = true })
+
 
 keymap.set("n", "<Space>tf", ":NvimTreeFocus<Return>", { noremap = true, silent = true })
 keymap.set("n", "<Space>tt", ":NvimTreeToggle<Return>", { noremap = true, silent = true })
