@@ -51,6 +51,10 @@ return require("packer").startup(function(use)
     end
   })
 
+  use({
+    "rafamadriz/friendly-snippets",
+  })
+
   -- Linting and Formatting
   use({
     "dense-analysis/ale",
@@ -92,7 +96,12 @@ return require("packer").startup(function(use)
   use("kyazdani42/nvim-web-devicons")
 
   -- Snippet Engine
-  use("L3MON4D3/LuaSnip")
+  use({
+    "L3MON4D3/LuaSnip",
+    config = function()
+      require("configs.luasnip")
+    end,
+  })
 
   -- LuaSnip completion Source for nvim-cmp
   use({
@@ -161,6 +170,14 @@ return require("packer").startup(function(use)
     config = function()
       require("configs.cmp")
     end
+  })
+
+  -- Debugger
+  use({
+    "puremourning/vimspector",
+    config = function()
+      require("configs.vimspector")
+    end,
   })
 
   -- Autocomplete Sources

@@ -1,5 +1,23 @@
 local keymap = vim.keymap
 
+-- Debugger (Vimspector)
+-- Start/Continue
+keymap.set("n", "<Space>dbc", ":call vimspector#Continue()<Return>", { noremap = true, silent = true })
+-- Stop
+keymap.set("n", "<Space>dbs", ":call vimspector#Stop()<Return>", { noremap = true, silent = true })
+-- Restart
+keymap.set("n", "<Space>dbr", ":call vimspector#Restart()<Return>", { noremap = true, silent = true })
+-- Toggle Breakpoint
+keymap.set("n", "<Space>dbb", ":call vimspector#ToggleBreakpoint()<Return>", { noremap = true, silent = true })
+-- Step Over
+keymap.set("n", "<Space>dbo", ":call vimspector#StepOver()<Return>", { noremap = true, silent = true })
+-- Step Into
+keymap.set("n", "<Space>dbi", ":call vimspector#StepInto()<Return>", { noremap = true, silent = true })
+-- Step Out
+keymap.set("n", "<Space>dbou", ":call vimspector#StepOut()<Return>", { noremap = true, silent = true })
+-- Launch
+keymap.set("n", "<Space>dbl", ":call vimspector#Launch()<Return>", { noremap = true, silent = true })
+
 -- Hover
 keymap.set("n", "K", require("hover").hover, { desc = "hover.nvim" })
 keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
