@@ -1,15 +1,19 @@
+local api = require("nvim-tree.api")
+
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
   sync_root_with_cwd = true,
   view = {
-    width = 50,
-    adaptive_size = false,
+    width = 40,
+    adaptive_size = true,
   },
   renderer = {
-    group_empty = true,
+    group_empty = false,
     indent_markers = {
       enable = true,
     },
+    highlight_opened_files = "name",
+    highlight_modified = "icon",
     icons = {
       git_placement = "signcolumn",
       show = {
@@ -38,3 +42,7 @@ require("nvim-tree").setup({
     },
   },
 })
+
+api.events.subscribe(api.events.Event.FileCreated, function(file)
+  vim.cmd("edit " .. file.fname)
+end)

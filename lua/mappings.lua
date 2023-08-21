@@ -1,51 +1,35 @@
 local keymap = vim.keymap
+local options = { noremap = true, silent = true }
 
--- Debugger (Vimspector)
--- Start/Continue
-keymap.set("n", "<Space>dbc", ":call vimspector#Continue()<Return>", { noremap = true, silent = true })
--- Stop
-keymap.set("n", "<Space>dbs", ":call vimspector#Stop()<Return>", { noremap = true, silent = true })
--- Restart
-keymap.set("n", "<Space>dbr", ":call vimspector#Restart()<Return>", { noremap = true, silent = true })
--- Toggle Breakpoint
-keymap.set("n", "<Space>dbb", ":call vimspector#ToggleBreakpoint()<Return>", { noremap = true, silent = true })
--- Step Over
-keymap.set("n", "<Space>dbo", ":call vimspector#StepOver()<Return>", { noremap = true, silent = true })
--- Step Into
-keymap.set("n", "<Space>dbi", ":call vimspector#StepInto()<Return>", { noremap = true, silent = true })
--- Step Out
-keymap.set("n", "<Space>dbou", ":call vimspector#StepOut()<Return>", { noremap = true, silent = true })
--- Launch
-keymap.set("n", "<Space>dbl", ":call vimspector#Launch()<Return>", { noremap = true, silent = true })
-
--- Hover
-keymap.set("n", "K", require("hover").hover, { desc = "hover.nvim" })
-keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
-
--- ALE
-keymap.set("n", "<Space>af", ":ALEFix<Return>", { noremap = true, silent = true })
-keymap.set("n", "<Space>al", ":ALELint<Return>", { noremap = true, silent = true })
-keymap.set("n", "<Space>an", ":ALENext<Return>", { noremap = true, silent = true })
-keymap.set("n", "<Space>ap", ":ALEPrevious<Return>", { noremap = true, silent = true })
-keymap.set("n", "<Space>ah", ":ALEHover<Return>", { noremap = true, silent = true })
-keymap.set("n", "<Space>ad", ":ALEDetail<Return>", { noremap = true, silent = true })
+keymap.set('n', '<space>e', vim.diagnostic.open_float)
+keymap.set('n', '[d', vim.diagnostic.goto_prev)
+keymap.set('n', ']d', vim.diagnostic.goto_next)
+keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
 -- Telescope
-keymap.set("n", "<Space>ff", ":Telescope find_files<Return>", { noremap = true, silent = true })
-keymap.set("n", "<Space>fg", ":Telescope live_grep<Return>", { noremap = true, silent = true })
-keymap.set("n", "<Space>fb", ":Telescope buffers<Return>", { noremap = true, silent = true })
-keymap.set("n", "<Space>fh", ":Telescope help_tags<Return>", { noremap = true, silent = true })
+keymap.set("n", "<Space>ff", ":Telescope find_files<Return>", options)
+keymap.set("n", "<Space>fg", ":Telescope live_grep<Return>", options)
+keymap.set("n", "<Space>fb", ":Telescope buffers<Return>", options)
+keymap.set("n", "<Space>fh", ":Telescope help_tags<Return>", options)
 
--- Floaterm
+-- Open lazydocker and lazygit in a floating terminal
 keymap.set("n", "<Space>lg", ":FloatermNew --width=0.9 --height=0.9 lazygit<Return>")
 keymap.set("n", "<Space>ld", ":FloatermNew --width=0.9 --height=0.9 lazydocker<Return>")
-keymap.set("n", "<Space>lt", ":FloatermToggle<Return>", { noremap = true, silent = true })
-keymap.set("n", "<Space>lq", ":FloatermKill<Return>", { noremap = true, silent = true })
 
--- Documentation
-keymap.set("n", "<Space>dt", ":DocsViewToggle<Return>", { noremap = true, silent = true })
-keymap.set("n", "<Space>du", ":DocsViewUpdate<Return>", { noremap = true, silent = true })
+-- NvimTree
+keymap.set("n", "<Space>tf", ":NvimTreeFocus<Return>", options)
+keymap.set("n", "<Space>tt", ":NvimTreeToggle<Return>", options)
 
+-- DAP Debugging
+keymap.set("n", "<Space><F5>", ":lua require('dap').continue()<Return>", options)
+keymap.set("n", "<Space><F6>", ":lua require('dap').run_to_cursor()<Return>", options)
+keymap.set("n", "<Space><F7>", ":lua require('dap').close()<Return>", options)
+keymap.set("n", "<Space><F10>", ":lua require('dap').step_over()<Return>", options)
+keymap.set("n", "<Space><F11>", ":lua require('dap').step_into()<Return>", options)
+keymap.set("n", "<Space><F12>", ":lua require('dap').step_out()<Return>", options)
+keymap.set("n", "<Space>b", ":lua require('dap').toggle_breakpoint()<Return>", options)
+keymap.set("n", "<Space>B", ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<Return>", options)
+keymap.set("n", "<Space>lp", ":lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<Return>", options)
+keymap.set("n", "<Space>dr", ":lua require('dap').repl.open()<Return>", options)
+keymap.set("n", "<Space>dl", ":lua require('dap').run_last()<Return>", options)
 
-keymap.set("n", "<Space>tf", ":NvimTreeFocus<Return>", { noremap = true, silent = true })
-keymap.set("n", "<Space>tt", ":NvimTreeToggle<Return>", { noremap = true, silent = true })
