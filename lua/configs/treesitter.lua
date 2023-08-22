@@ -25,7 +25,8 @@ ts.setup({
 		"css",
 		"html",
 		"lua",
-	},
+    "gitignore",
+  },
 	rainbow = {
 		enable = true,
 		disable = { "html" },

@@ -3,7 +3,7 @@ local o = vim.o
 
 global.loaded_netrw = 1
 global.loaded_netrwPlugin = 1
-global.python3_host_prog = "/opt/homebrew/bin/python3"
+
 global.mapleader = " "
 global.maplocalleader = " "
 
