@@ -51,16 +51,16 @@ return require("packer").startup(function(use)
   use "williamboman/mason-lspconfig.nvim"
   use { "neovim/nvim-lspconfig", config = function() require("configs.lsp_config") end }
 
-  use({
+  use {
     "nvim-telescope/telescope.nvim",
     requires = {{ "nvim-lua/plenary.nvim" }},
     config = function() require("telescope").setup() end,
-  })
+  }
 
-  use({ "L3MON4D3/LuaSnip", config = function() require("luasnip.loaders.from_vscode").lazy_load() end })
-  use({ "nvim-tree/nvim-tree.lua", config = function() require("configs.nvim-tree") end })
+  use { "L3MON4D3/LuaSnip", config = function() require("luasnip.loaders.from_vscode").lazy_load() end }
+  use { "nvim-tree/nvim-tree.lua", config = function() require("configs.nvim-tree") end }
 
-  use({
+  use{
     "nvim-treesitter/nvim-treesitter",
     run = function()
       require("nvim-treesitter.install")
@@ -69,7 +69,7 @@ return require("packer").startup(function(use)
     config = function()
       require("configs.treesitter")
     end,
-  })
+  }
 
   use { "hrsh7th/nvim-cmp", event = "InsertEnter", config = function() require("configs.cmp") end }
   use { "hrsh7th/cmp-nvim-lsp" }
