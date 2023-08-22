@@ -22,39 +22,137 @@ local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
-  use("nvim-lua/plenary.nvim")
-  use("rafamadriz/friendly-snippets")
+
   use("voldikss/vim-floaterm")
+
   use("github/copilot.vim")
+
+  -- Colorschemes
+  use("hardselius/warlock")
+  use("arzg/vim-substrata")
+  use("sainnhe/gruvbox-material")
+  use("RRethy/nvim-base16")
+  use("ellisonleao/gruvbox.nvim")
+
+  -- UI
+  use("vigoux/notifier.nvim")
   use("onsails/lspkind-nvim")
   use("kyazdani42/nvim-web-devicons")
-  use("ellisonleao/gruvbox.nvim")
 
   use({
     "folke/which-key.nvim",
     config = function()
       vim.o.timeout = true
-      vim.o.timeoutlen = 0
-      require("which-key").setup()
+      vim.o.timeoutlen = 150
+      require("which-key").setup({})
     end,
   })
 
+  -- Buffer management
+  use({
+    "akinsho/bufferline.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = [[require('configs.bufferline')]],
+    -- event = "User ActuallyEditing",
+    --disable = true,
+  })
+
+  use({
+    {
+      "L3MON4D3/LuaSnip",
+      opt = true,
+    },
+    "rafamadriz/friendly-snippets",
+  })
+
+  -- Search
+  use({
+    {
+      "nvim-telescope/telescope.nvim",
+      requires = {
+        "nvim-lua/popup.nvim",
+        "nvim-lua/plenary.nvim",
+        "telescope-frecency.nvim",
+        "telescope-fzf-native.nvim",
+        "nvim-telescope/telescope-ui-select.nvim",
+      },
+      wants = {
+        "popup.nvim",
+        "plenary.nvim",
+        "telescope-frecency.nvim",
+        "telescope-fzf-native.nvim",
+      },
+      setup = [[require('configs.telescope_setup')]],
+      config = [[require('configs.telescope')]],
+      cmd = "Telescope",
+      module = "telescope",
+    },
+    {
+      "nvim-telescope/telescope-frecency.nvim",
+      after = "telescope.nvim",
+      requires = "tami5/sqlite.lua",
+    },
+    {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      run = "make",
+    },
+    "crispgm/telescope-heading.nvim",
+    "nvim-telescope/telescope-file-browser.nvim",
+  })
+
+  -- Completion
+  use({
+    "hrsh7th/nvim-cmp",
+    requires = {
+      { "hrsh7th/cmp-buffer",                  after = "nvim-cmp" },
+      "hrsh7th/cmp-nvim-lsp",
+      "onsails/lspkind.nvim",
+      { "hrsh7th/cmp-nvim-lsp-signature-help", after = "nvim-cmp" },
+      { "hrsh7th/cmp-path",                    after = "nvim-cmp" },
+      { "hrsh7th/cmp-nvim-lua",                after = "nvim-cmp" },
+      { "saadparwaiz1/cmp_luasnip",            after = "nvim-cmp" },
+      "lukas-reineke/cmp-under-comparator",
+      { "hrsh7th/cmp-cmdline",                  after = "nvim-cmp" },
+      { "hrsh7th/cmp-nvim-lsp-document-symbol", after = "nvim-cmp" },
+    },
+    config = [[require('configs.cmp')]],
+    event = "InsertEnter",
+    wants = "LuaSnip",
+  })
+
+  -- highlights
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    requires = {
+      "nvim-treesitter/nvim-treesitter-refactor",
+      "RRethy/nvim-treesitter-textsubjects",
+    },
+    run = ":TSUpdate",
+  })
+
+  -- LSP
+  use({
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+    {
+      "jose-elias-alvarez/null-ls.nvim",
+      requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    },
+  })
+
+  -- null-ls (formatting/linting)
   use({
     "jay-babu/mason-null-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },
     requires = {
       "williamboman/mason.nvim",
       "jose-elias-alvarez/null-ls.nvim",
-      "nvim-telescope/telescope.nvim",
     },
-    config = function()
-      require("configs.lsp_config")
-    end,
+    config = [[require('configs.lsp_config')]],
   })
 
-  use("williamboman/mason-lspconfig.nvim")
-  use({ "neovim/nvim-lspconfig" })
-
+  -- Status line
   use({
     "nvim-lualine/lualine.nvim",
     requires = { "nvim-tree/nvim-web-devicons", opt = true },
@@ -67,63 +165,31 @@ return require("packer").startup(function(use)
     end,
   })
 
-  use({
-    "lewis6991/hover.nvim",
-    config = function()
-      require("configs.hover")
-    end,
-  })
-
-  use({
-    "nvim-telescope/telescope.nvim",
-    requires = { { "nvim-lua/plenary.nvim" } },
-    config = function()
-      require("telescope").setup()
-    end,
-  })
-
-  use({
-    "L3MON4D3/LuaSnip",
-    config = function()
-      require("luasnip.loaders.from_vscode").lazy_load()
-    end,
-  })
+  -- Path navigation
   use({
     "nvim-tree/nvim-tree.lua",
-    config = function()
-      require("configs.nvim-tree")
-    end,
+    config = [[require('configs.nvim-tree')]],
   })
 
+  -- Debugger
   use({
-    "nvim-treesitter/nvim-treesitter",
-    run = function()
-      require("nvim-treesitter.install").update({ with_sync = true })
-    end,
-    config = function()
-      require("configs.treesitter")
-    end,
+    {
+      "mfussenegger/nvim-dap",
+      setup = [[require('configs.dap_setup')]],
+      config = [[require('configs.dap')]],
+      requires = "jbyuki/one-small-step-for-vimkind",
+      wants = "one-small-step-for-vimkind",
+    },
+    {
+      "rcarriga/nvim-dap-ui",
+      requires = "nvim-dap",
+      wants = "nvim-dap",
+      after = "nvim-dap",
+      config = function()
+        require("dapui").setup()
+      end,
+    },
   })
-
-  use({
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    config = function()
-      require("configs.cmp")
-    end,
-  })
-  use({ "hrsh7th/cmp-nvim-lsp" })
-  use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
-  use({ "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" })
-
-  use({
-    "mfussenegger/nvim-dap",
-    config = function()
-      require("configs.dap")
-    end,
-  })
-  use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
-  use({ "theHamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap" } })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
