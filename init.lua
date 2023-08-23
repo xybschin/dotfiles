@@ -74,7 +74,7 @@ map("n", "<c-j>", "<c-w>j", silent)
 map("n", "<c-k>", "<c-w>k", silent)
 
 -- Exit terminal mode
-map("t", "<esc>", "<c-\\><c-n>", silent)
+map("t", "<c-q>", "<c-\\><c-n>", silent)
 
 -- NvimTree
 map("n", "<leader>s", ":NvimTreeFocus<Return>", silent)
