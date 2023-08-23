@@ -69,9 +69,14 @@ map("i", "<c-s>", "<esc><cmd>w<cr>a", silent)
 map("n", "<leader>w", "<cmd>w<cr>", silent)
 
 -- Window movement
-map("n", "<c-h>", "<c-w>h", silent)
-map("n", "<c-j>", "<c-w>j", silent)
-map("n", "<c-k>", "<c-w>k", silent)
+map("n", "<a-h>", "<c-w>h", silent)
+map("n", "<a-j>", "<c-w>j", silent)
+map("n", "<a-k>", "<c-w>k", silent)
+map("n", "<a-l>", "<c-w>l", silent)
+
+-- Tab movement
+map("n", "<a-,>", "<cmd>tabprevious<cr>", silent)
+map("n", "<a-.>", "<cmd>tabnext<cr>", silent)
 
 -- Exit terminal mode
 map("t", "<c-q>", "<c-\\><c-n>", silent)
