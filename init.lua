@@ -1,4 +1,4 @@
-require("plugins")
+require "plugins"
 
 local g = vim.g
 local cmd = vim.cmd
@@ -13,7 +13,7 @@ opt.textwidth = 100
 opt.scrolloff = 7
 opt.wildignore = { "*.o", "*~", "*.pyc" }
 opt.wildmode = "longest,full"
-opt.whichwrap:append("<,>,h,l")
+opt.whichwrap:append "<,>,h,l"
 opt.inccommand = "nosplit"
 opt.lazyredraw = true
 opt.showmatch = true
@@ -30,7 +30,7 @@ opt.laststatus = 3
 opt.showmode = false
 opt.shada = [['20,<50,s10,h,/100]]
 opt.hidden = true
-opt.shortmess:append("c")
+opt.shortmess:append "c"
 opt.joinspaces = false
 opt.guicursor = [[n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50]]
 opt.updatetime = 100
@@ -53,7 +53,7 @@ opt.fillchars = [[vert:│,horiz:─,eob: ]]
 -- Colorscheme
 opt.termguicolors = true
 
-cmd([[colorscheme gruvbox-material]])
+cmd [[colorscheme gruvbox-material]]
 -- cmd([[colorscheme base16-gruvbox-dark-hard]])
 
 -- Keybidings
@@ -73,13 +73,8 @@ map("n", "<c-h>", "<c-w>h", silent)
 map("n", "<c-j>", "<c-w>j", silent)
 map("n", "<c-k>", "<c-w>k", silent)
 
--- Tab movement
-map("n", "<c-Left>", "<cmd>tabpre<cr>", silent)
-map("n", "<c-Right>", "<cmd>tabnext<cr>", silent)
-
--- Open lazydocker and lazygit in a floating terminal
-map("n", "<leader>og", ":FloatermNew --width=0.9 --height=0.9 lazygit<Return>", silent)
-map("n", "<leader>od", ":FloatermNew --width=0.9 --height=0.9 lazydocker<Return>", silent)
+-- Exit terminal mode
+map("t", "<esc>", "<c-\\><c-n>", silent)
 
 -- NvimTree
 map("n", "<leader>s", ":NvimTreeFocus<Return>", silent)
