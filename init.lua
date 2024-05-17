@@ -1,7 +1,6 @@
 require "plugins"
 
 local g = vim.g
-local cmd = vim.cmd
 
 -- Leader/local leader
 g.mapleader = [[ ]]
@@ -42,19 +41,16 @@ opt.synmaxcol = 500
 opt.display = "msgsep"
 opt.cursorline = true
 opt.modeline = false
-opt.mouse = "nivh"
+
+opt.mouse = ""
+
 opt.signcolumn = "yes:1"
 opt.cmdheight = 0
 opt.splitbelow = true
 opt.splitright = true
 opt.timeoutlen = 200
 opt.fillchars = [[vert:│,horiz:─,eob: ]]
-
--- Colorscheme
 opt.termguicolors = true
-
-cmd [[colorscheme gruvbox-material]]
--- cmd([[colorscheme base16-gruvbox-dark-hard]])
 
 -- Keybidings
 local silent = { silent = true, noremap = true }

@@ -24,11 +24,14 @@ return require("packer").startup(function(use)
     use "wbthomason/packer.nvim"
 
     -- Colorschemes
-    use "hardselius/warlock"
-    use "arzg/vim-substrata"
-    use "sainnhe/gruvbox-material"
-    use "RRethy/nvim-base16"
-    use "ellisonleao/gruvbox.nvim"
+    use {
+        "jesseleite/nvim-noirbuddy",
+        requires = { "tjdevries/colorbuddy.nvim" },
+        config = function()
+            require("noirbuddy").setup()
+            vim.cmd.colorscheme "noirbuddy"
+        end,
+    }
 
     -- UI
     use "vigoux/notifier.nvim"
@@ -161,7 +164,7 @@ return require("packer").startup(function(use)
         config = function()
             require("lualine").setup {
                 options = {
-                    theme = "gruvbox",
+                    theme = "iceberg_dark",
                 },
             }
         end,
@@ -171,26 +174,6 @@ return require("packer").startup(function(use)
     use {
         "nvim-tree/nvim-tree.lua",
         config = [[require('configs.nvim-tree')]],
-    }
-
-    -- Debugger
-    use {
-        {
-            "mfussenegger/nvim-dap",
-            setup = [[require('configs.dap_setup')]],
-            config = [[require('configs.dap')]],
-            requires = "jbyuki/one-small-step-for-vimkind",
-            wants = "one-small-step-for-vimkind",
-        },
-        {
-            "rcarriga/nvim-dap-ui",
-            requires = "nvim-dap",
-            wants = "nvim-dap",
-            after = "nvim-dap",
-            config = function()
-                require("dapui").setup()
-            end,
-        },
     }
 
     -- Automatically set up your configuration after cloning packer.nvim
