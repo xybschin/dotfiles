@@ -18,6 +18,9 @@ return {
         "isort",
         "black",
         "stylua",
+        "clang-format",
+        "clangd",
+        "gopls",
       },
     }
   end,

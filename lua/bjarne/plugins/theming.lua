@@ -1,13 +1,13 @@
 return {
-  { 
+  {
     "jesseleite/nvim-noirbuddy",
     dependencies = {
-      { 'tjdevries/colorbuddy.nvim' }
+      { "tjdevries/colorbuddy.nvim" },
     },
     lazy = false,
     priority = 1000,
-    opts = {}
+    opts = {},
   },
-  { "lukas-reineke/indent-blankline.nvim" }, 
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 }
