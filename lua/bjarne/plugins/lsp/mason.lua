@@ -9,12 +9,12 @@ return {
     require("mason-lspconfig").setup {
       ensure_installed = {
         "lua_ls",
+        "texlab",
       },
     }
 
     require("mason-tool-installer").setup {
       ensure_installed = {
-        "lua-language-server",
         "isort",
         "black",
         "stylua",
