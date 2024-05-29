@@ -12,7 +12,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.color_scheme = "Batman"
 config.colors = { background = "#121212" }
 
-config.font_size = 11
+config.font_size = 12
 config.font = wezterm.font({
 	family = "Iosevka Nerd Font",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
