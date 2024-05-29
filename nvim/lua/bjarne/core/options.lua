@@ -1,7 +1,6 @@
 vim.g.mapleader = [[ ]]
 vim.g.maplocalleader = [[,]]
 
-
 vim.opt.textwidth = 100
 vim.opt.scrolloff = 7
 vim.opt.wildignore = { "*.o", "*~", "*.pyc" }
@@ -43,4 +42,3 @@ vim.opt.splitright = true
 vim.opt.timeoutlen = 200
 vim.opt.fillchars = [[vert:│,horiz:─,eob: ]]
 vim.opt.termguicolors = true
-
