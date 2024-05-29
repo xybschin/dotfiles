@@ -1,0 +1,13 @@
+*
+!wezterm
+!wezterm/**
+
+!nvim
+!nvim/**
+
+!whkdrc
+
+!komorebi
+!komorebi/*
+
+!.gitignore
