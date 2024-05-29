@@ -1,13 +1,12 @@
 *
 !wezterm
 !wezterm/**
-
 !nvim
 !nvim/**
-
 !whkdrc
-
 !komorebi
-!komorebi/*
+!komorebi/**
+!yabai
+!yabai/**
 
 !.gitignore
