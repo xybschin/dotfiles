@@ -22,6 +22,7 @@ return {
     cmp.setup {
       completion = {
         completeopt = "menu,menuone,preview,noselect",
+        keyword_length = 1,
       },
       snippet = {
         expand = function(args)
@@ -38,7 +39,7 @@ return {
         ["<CR>"] = cmp.mapping.confirm { select = false },
       },
       sources = cmp.config.sources {
-        { name = "nvim_lsp" },
+        { name = "nvim_lsp", keyword_length = 1 },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },

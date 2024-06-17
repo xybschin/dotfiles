@@ -1,10 +1,20 @@
 local opt = { silent = true, noremap = true }
 
-vim.api.nvim_set_keymap("n", "<leader>w", "<cmd>w<cr>", opt)
-vim.api.nvim_set_keymap("n", "<a-h>", "<c-w>h", opt)
-vim.api.nvim_set_keymap("n", "<a-j>", "<c-w>j", opt)
-vim.api.nvim_set_keymap("n", "<a-k>", "<c-w>k", opt)
-vim.api.nvim_set_keymap("n", "<a-l>", "<c-w>l", opt)
-vim.api.nvim_set_keymap("n", "<a-,>", "<cmd>tabprevious<cr>", opt)
-vim.api.nvim_set_keymap("n", "<a-.>", "<cmd>tabnext<cr>", opt)
-vim.api.nvim_set_keymap("t", "<c-q>", "<c-\\><c-n>", opt)
+vim.keymap.set("n", "<Up>", "<Nop>", opt)
+vim.keymap.set("n", "<Down>", "<Nop>", opt)
+vim.keymap.set("n", "<Left>", "<Nop>", opt)
+vim.keymap.set("n", "<Right>", "<Nop>", opt)
+vim.keymap.set("i", "<Up>", "<Nop>", opt)
+vim.keymap.set("i", "<Down>", "<Nop>", opt)
+vim.keymap.set("i", "<Left>", "<Nop>", opt)
+vim.keymap.set("i", "<Right>", "<Nop>", opt)
+
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", opt)
+
+vim.keymap.set({ "n", "x" }, "j", function()
+  return vim.v.count > 0 and "j" or "gj"
+end, { noremap = true, expr = true })
+
+vim.keymap.set({ "n", "x" }, "k", function()
+  return vim.v.count > 0 and "k" or "gk"
+end, { noremap = true, expr = true })

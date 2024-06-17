@@ -38,7 +38,7 @@ return {
             restrict_above_cwd = true,
           },
           open_file = {
-            resize_window = true,
+            quit_on_open = true,
           },
         },
         filters = {
