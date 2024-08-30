@@ -3,10 +3,9 @@
 !wezterm/**
 !nvim
 !nvim/**
-!whkdrc
 !komorebi
 !komorebi/**
-!yabai
-!yabai/**
+!tmux
+!tmux/**
 
 !.gitignore
