@@ -6,20 +6,7 @@ return {
   },
   config = function()
     require("mason").setup {}
-    require("mason-lspconfig").setup {
-      ensure_installed = {
-        "lua_ls",
-        "texlab",
-      },
-    }
-
-    require("mason-tool-installer").setup {
-      ensure_installed = {
-        "isort",
-        "black",
-        "stylua",
-        "clang-format",
-      },
-    }
+    require("mason-lspconfig").setup {}
+    require("mason-tool-installer").setup {}
   end,
 }

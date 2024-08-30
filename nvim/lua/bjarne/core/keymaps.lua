@@ -18,3 +18,5 @@ end, { noremap = true, expr = true })
 vim.keymap.set({ "n", "x" }, "k", function()
   return vim.v.count > 0 and "k" or "gk"
 end, { noremap = true, expr = true })
+
+vim.keymap.set("n", "<leader>nb", "<cmd>Navbuddy<cr>", opt)

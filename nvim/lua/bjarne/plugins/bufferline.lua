@@ -14,7 +14,7 @@ return {
         mode = "buffers",
         separator_style = "thin",
         style_preset = "bufferline.style_preset.minimal",
-        always_show_bufferline = true,
+        always_show_bufferline = false,
         diagnostics = "nvim_lsp",
         tab_size = 10,
       },

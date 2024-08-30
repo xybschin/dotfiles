@@ -21,7 +21,7 @@ return {
 
     cmp.setup {
       completion = {
-        completeopt = "menu,menuone,preview,noselect",
+        completeopt = "menu,menuone,preview",
         keyword_length = 1,
       },
       snippet = {
