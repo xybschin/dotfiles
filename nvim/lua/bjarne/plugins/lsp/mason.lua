@@ -19,8 +19,6 @@ return {
         "black",
         "stylua",
         "clang-format",
-        "clangd",
-        "gopls",
       },
     }
   end,
