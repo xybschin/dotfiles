@@ -8,3 +8,5 @@ vim.opt.termguicolors = true
 vim.cmd "set noshowmode"
 vim.cmd "set noshowcmd"
 vim.cmd "set cursorline"
+
+vim.cmd "set clipboard=unnamedplus"
