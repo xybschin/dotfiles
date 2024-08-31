@@ -5,7 +5,7 @@
 !nvim/**
 !komorebi
 !komorebi/**
-!tmux
-!tmux/**
+!zellij
+!zellij/**
 
 !.gitignore
