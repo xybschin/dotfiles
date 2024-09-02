@@ -212,7 +212,7 @@ plugins {
 //    - true
 //    - false (Default)
 //
-// simplified_ui true
+simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -363,3 +363,9 @@ theme "rose-pine"
 // Default: false
 //
 // disable_session_metadata true
+
+ui {
+	pane_frame {
+		rounded_corners true
+	}
+}

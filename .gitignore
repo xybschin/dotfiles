@@ -7,5 +7,7 @@
 !komorebi/**
 !zellij
 !zellij/**
+!aerospace
+!aerospace/**
 
 !.gitignore

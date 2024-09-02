@@ -10,6 +10,12 @@ return {
     },
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
+    {
+      "zbirenbaum/copilot-cmp",
+      config = function()
+        require("copilot_cmp").setup()
+      end,
+    },
     "onsails/lspkind.nvim",
   },
   config = function()
