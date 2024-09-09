@@ -23,6 +23,8 @@ return {
         "html",
         "lua",
         "gitignore",
+        "python",
+        "c_sharp",
       },
 
       rainbow = {
