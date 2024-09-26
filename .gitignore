@@ -5,8 +5,8 @@
 !nvim/**
 !komorebi
 !komorebi/**
-!zellij
-!zellij/**
+!tmux
+!tmux/**
 !aerospace
 !aerospace/**
 
