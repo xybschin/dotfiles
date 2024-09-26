@@ -12,7 +12,7 @@ config.hide_tab_bar_if_only_one_tab = true
 local theme = wezterm.plugin.require("https://github.com/neapsix/wezterm").main
 
 config.colors = theme.colors()
-config.font_size = 15
+config.font_size = 13
 config.colors["background"] = "#000"
 config.font = wezterm.font({
 	family = "JetBrainsMono Nerd Font",

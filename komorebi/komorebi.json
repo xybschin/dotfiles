@@ -3,12 +3,13 @@
   "app_specific_configuration_path": "$Env:USERPROFILE/.config/komorebi/applications.yaml",
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
-  "default_workspace_padding": 2,
-  "default_container_padding": 2,
-  "border_width": 1,
-  "border_offset": 0,
-  "active_window_border": true,
-  "active_window_border_colours": {
+  "default_workspace_padding": 4,
+  "default_container_padding": 4,
+  "border_width": 10,
+  "border_offset": -6,
+  "border_style": "Square",
+  "border": true,
+  "border_colours": {
     "single": "#b85859",
     "stack": "#00a542",
     "monocle": "#ff3399"
