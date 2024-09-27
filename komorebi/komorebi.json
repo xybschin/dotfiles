@@ -4,16 +4,16 @@
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
   "default_workspace_padding": 3,
-  "default_container_padding": 3,
+  "default_container_padding": 2,
   "border": true,
   "border_style": "Square",
-  "border_width": 6,
+  "border_width": 5,
   "border_offset": -4,
   "border_colours": {
-    "single": "#42a5f5",
+    "single": "#eb6f92",
     "stack": "#00a542",
     "monocle": "#ff3399",
-    "unfocused": "#808080"
+    "unfocused": "#e0def4"
   },
   "stackbar": {
     "height": 40,
@@ -40,22 +40,6 @@
           "name": "III",
           "layout": "BSP"
         },
-        {
-          "name": "IV",
-          "layout": "BSP"
-        },
-        {
-          "name": "V",
-          "layout": "BSP"
-        },
-        {
-          "name": "VI",
-          "layout": "BSP"
-        },
-        {
-          "name": "VII",
-          "layout": "BSP"
-        }
       ]
     }
   ]
