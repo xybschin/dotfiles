@@ -9,5 +9,6 @@
 !tmux/**
 !aerospace
 !aerospace/**
-
+!zsh
+!zsh/**
 !.gitignore
