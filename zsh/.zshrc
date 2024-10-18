@@ -21,10 +21,7 @@ type starship_zle-keymap-select >/dev/null || \
   {
     eval "$(starship init zsh)"
   }
-
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
-export EDITOR=$(brew --prefix)/bin/nvim
 
 alias lat=tree
 alias la="ls -al"
@@ -34,7 +31,7 @@ alias cat=bat
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='nvim'
+  export EDITOR=$(brew --prefix)/bin/nvim
 fi
 
 alias dco="docker compose"
@@ -51,4 +48,4 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-if [ "$TMUX" = "" ]; then tmux; fi
+[ -z "$TMUX" ] && { tmux attach 2>/dev/null || exec tmux new-session && exit; }
