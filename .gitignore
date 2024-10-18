@@ -11,4 +11,6 @@
 !aerospace/**
 !zsh
 !zsh/**
+!starship
+!starship/**
 !.gitignore
