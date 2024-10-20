@@ -5,7 +5,6 @@
 !nvim/**
 !komorebi
 !komorebi/**
-!tmux
 !tmux/tmux.conf
 !tmux/tmux.reset.conf
 !aerospace
