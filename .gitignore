@@ -6,7 +6,8 @@
 !komorebi
 !komorebi/**
 !tmux
-!tmux/**
+!tmux/tmux.conf
+!tmux/tmux.reset.conf
 !aerospace
 !aerospace/**
 !zsh
