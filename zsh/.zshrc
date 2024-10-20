@@ -42,10 +42,9 @@ alias dx="docker exec -it"
 
 bindkey jj vi-cmd-mode
 
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 [ -z "$TMUX" ] && { tmux attach 2>/dev/null || exec tmux new-session && exit; }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

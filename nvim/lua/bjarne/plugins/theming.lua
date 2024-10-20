@@ -1,36 +1,46 @@
 return {
-  -- {
-  --   "danishprakash/vim-yami",
-  --   config = function()
-  --     vim.cmd "colorscheme yami"
-  --   end,
-  -- },
-  -- {
-  --   "fxn/vim-monochrome",
-  --   config = function()
-  --     vim.cmd "colorscheme monochrome"
-  --   end,
-  -- },
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
     config = function()
-      require("rose-pine").setup { disable_background = true }
-      vim.cmd.colorscheme "rose-pine"
+      require("catppuccin").setup {
+        no_italic = true,
+        term_colors = true,
+        transparent_background = false,
+        styles = {
+          comments = {},
+          conditionals = {},
+          loops = {},
+          functions = {},
+          keywords = {},
+          strings = {},
+          variables = {},
+          numbers = {},
+          booleans = {},
+          properties = {},
+          types = {},
+        },
+        color_overrides = {
+          mocha = {
+            base = "#000000",
+            mantle = "#000000",
+            crust = "#000000",
+          },
+        },
+        integrations = {
+          telescope = {
+            enabled = true,
+            style = "nvchad",
+          },
+          dropbar = {
+            enabled = true,
+            color_mode = true,
+          },
+        },
+      }
+      vim.cmd.colorscheme "catppuccin"
     end,
   },
-  -- {
-  --   "jesseleite/nvim-noirbuddy",
-  --   dependencies = {
-  --     { "tjdevries/colorbuddy.nvim" },
-  --   },
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {
-  --     colors = {
-  --       background = "#000000",
-  --     },
-  --   },
-  -- },
   { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 }
