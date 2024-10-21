@@ -57,8 +57,8 @@ return {
         },
       }
 
-      vim.keymap.set("n", "<leader>s", ":NvimTreeFocus<Return>")
-      vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<Return>")
+      vim.keymap.set("n", "<leader>s", ":NvimTreeFocus<Return>", { desc = "Focus Explorer" })
+      vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<Return>", { desc = "Toggle Explorer" })
     end,
   },
 }

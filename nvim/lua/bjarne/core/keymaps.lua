@@ -1,20 +1,12 @@
-local opt = { silent = true, noremap = true }
+local opts = { silent = true, noremap = true }
 
-vim.keymap.set({ "n", "i", "v" }, "<Up>", "<Nop>", opt)
-vim.keymap.set({ "n", "i", "v" }, "<Down>", "<Nop>", opt)
-vim.keymap.set({ "n", "i", "v" }, "<Left>", "<Nop>", opt)
-vim.keymap.set({ "n", "i", "v" }, "<Right>", "<Nop>", opt)
-vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", opt)
+vim.keymap.set({ "n", "i", "v" }, "<Up>", "<Nop>", opts)
+vim.keymap.set({ "n", "i", "v" }, "<Down>", "<Nop>", opts)
+vim.keymap.set({ "n", "i", "v" }, "<Left>", "<Nop>", opts)
+vim.keymap.set({ "n", "i", "v" }, "<Right>", "<Nop>", opts)
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", opts)
 
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", opt)
-vim.keymap.set("n", "<leader>nb", "<cmd>Navbuddy<cr>", opt)
-
-vim.keymap.set("n", "tk", ":blast<enter>", opt)
-vim.keymap.set("n", "tj", ":bfirst<enter>", opt)
-vim.keymap.set("n", "th", ":bprev<enter>", opt)
-vim.keymap.set("n", "tl", ":bnext<enter>", opt)
-vim.keymap.set("n", "td", ":bdelete<enter>", opt)
-vim.keymap.set("n", "tp", "<cmd>BufferLinePick<cr>", opt)
-
-vim.keymap.set({ "n", "v" }, "dn", vim.diagnostic.goto_next, opt)
-vim.keymap.set({ "n", "v" }, "dp", vim.diagnostic.goto_prev, opt)
+vim.keymap.set("n", "<c-h>", "<cmd>wincmd h<cr>", opts)
+vim.keymap.set("n", "<c-l>", "<cmd>wincmd l<cr>", opts)
+vim.keymap.set("n", "<c-j>", "<cmd>wincmd j<cr>", opts)
+vim.keymap.set("n", "<c-k>", "<cmd>wincmd k<cr>", opts)

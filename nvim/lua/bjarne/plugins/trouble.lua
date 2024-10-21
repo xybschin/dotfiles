@@ -8,4 +8,10 @@ return {
     { "<leader>xq", "<cmd>TroubleToggle quickfix<CR>", desc = "Open trouble quickfix list" },
     { "<leader>xl", "<cmd>TroubleToggle loclist<CR>", desc = "Open trouble location list" },
   },
+  config = function()
+    local wk = require "which-key"
+    wk.add {
+      { "<leader>x", group = "Trouble" },
+    }
+  end,
 }
