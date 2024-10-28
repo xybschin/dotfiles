@@ -1,0 +1,3 @@
+.blacklist [ "wezterm" ]
+
+alt - return : open -n -a "wezterm.app"
