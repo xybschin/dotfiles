@@ -1,8 +1,0 @@
-.blacklist [
-    "terminal"
-    "qutebrowser"
-    "wezterm"
-    "google chrome"
-]
-
-alt - return : open -n -a "wezterm.app"
