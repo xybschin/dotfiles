@@ -7,4 +7,11 @@ return {
     end,
   },
   { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
+  -- {
+  --   "rose-pine/neovim",
+  --   name = "rose-pine",
+  --   init = function()
+  --     vim.cmd.colorscheme "rose-pine"
+  --   end,
+  -- },
 }
