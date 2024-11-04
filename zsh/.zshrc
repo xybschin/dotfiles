@@ -4,6 +4,12 @@ else;
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+if [[ -d "$HOME/.nvm" ]]; then
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
+fi
+
 setopt prompt_subst
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 autoload bashcompinit && bashcompinit
@@ -54,3 +60,4 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 [ -z "$TMUX" ] && { tmux attach 2>/dev/null || exec tmux new-session && exit; }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
