@@ -3,8 +3,7 @@ return {
   {
     "savq/melange-nvim",
     init = function()
-      vim.opt.termguicolors = true
-      vim.cmd.colorscheme "melange"
+      vim.cmd.colorscheme "melange" -- colorscheme still needs vim.cmd
     end,
   },
   { "windwp/nvim-autopairs", event = "InsertEnter", config = true },

@@ -3,11 +3,12 @@ vim.g.maplocalleader = [[,]]
 
 vim.opt.number = true
 vim.opt.relativenumber = true
-
-vim.cmd "set noshowmode"
-vim.cmd "set noshowcmd"
-vim.cmd "set cursorline"
-vim.cmd "set mouse="
-vim.cmd "set clipboard=unnamedplus"
-
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.opt.showmode = false
+vim.opt.showcmd = false
+vim.opt.cursorline = true
+vim.opt.mouse = ""
+vim.opt.clipboard = "unnamedplus"
+vim.opt.autoindent = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.termguicolors = true
