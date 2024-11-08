@@ -26,7 +26,6 @@ return {
         { source = "buffers" },
         { source = "git_status" },
         { source = "document_symbols" },
-        { source = "diagnostics" },
       },
     },
     default_component_configs = {
