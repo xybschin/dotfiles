@@ -60,4 +60,6 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 [ -z "$TMUX" ] && { tmux attach 2>/dev/null || exec tmux new-session && exit; }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.local.zsh ] && source ~/.local.zsh
+
 
