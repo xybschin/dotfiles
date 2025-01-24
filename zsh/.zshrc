@@ -1,7 +1,7 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000
-setopt IHC_APPEND_HISTORY_TIME
+setopt INC_APPEND_HISTORY_TIME
 
 if [[ $(uname) == "Darwin" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
