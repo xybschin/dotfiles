@@ -10,3 +10,6 @@ vim.keymap.set("n", "<c-h>", "<cmd>wincmd h<cr>", opts)
 vim.keymap.set("n", "<c-l>", "<cmd>wincmd l<cr>", opts)
 vim.keymap.set("n", "<c-j>", "<cmd>wincmd j<cr>", opts)
 vim.keymap.set("n", "<c-k>", "<cmd>wincmd k<cr>", opts)
+
+vim.keymap.set("n", "<leader>of", ":lua MiniFiles.open()<cr>", opts)
+

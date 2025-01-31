@@ -11,7 +11,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- set colorscheme
--- vim.cmd.colorscheme "alabaster"
+vim.cmd.colorscheme "rose-pine"
 
 vim.opt.showmode = false
 vim.opt.showcmd = false
