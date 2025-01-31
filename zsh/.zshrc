@@ -1,12 +1,14 @@
+# Load Homebrew Package Manager based on operating system
+if [[ $(uname) == "Darwin" ]]; then; eval "$(/opt/homebrew/bin/brew shellenv)"
+else; eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; fi
+
 source "${HOME}/.zgen/zgen.zsh"
 if ! zgen saved; then
-	# https://github.com/tarjoilija/zgen
   zgen load zpm-zsh/tmux
-	zgen load ytet5uy4/fzf-widgets
   zgen save
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 [ -f ~/.local.zsh ] && source ~/.local.zsh
 
 TMUX_MOTD=false
@@ -15,10 +17,6 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000
 setopt INC_APPEND_HISTORY_TIME
-
-# Load Homebrew Package Manager based on operating system
-if [[ $(uname) == "Darwin" ]]; then; eval "$(/opt/homebrew/bin/brew shellenv)"
-else; eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; fi
 
 if [[ -d "$HOME/.nvm" ]]; then
 	export NVM_DIR="$HOME/.nvm"
