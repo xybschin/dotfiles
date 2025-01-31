@@ -1,5 +1,4 @@
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
     "git",
@@ -10,13 +9,10 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   }
 end
-
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-  { import = "bjarne.plugins" },
-  { import = "bjarne.plugins.lsp" },
-}, {
-  checker = { enabled = true, notify = false },
-  change_detection = { notify = false },
-})
+require("lazy").setup {
+  { "echasnovski/mini.nvim", version = "*" },
+  { "rose-pine/neovim", name = "rose-pine", opts = { palette = { main = { base = "#0D0C16", }, }, } },
+  { "p00f/alabaster.nvim" },
+}

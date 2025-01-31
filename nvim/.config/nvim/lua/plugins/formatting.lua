@@ -2,9 +2,6 @@ return {
   "stevearc/conform.nvim",
   event = { "BufReadPre", "BufNewFile" },
   config = function()
-    require("which-key").add {
-      { "<leader>Ff", "<cmd>Format current buffer<cr>", desc = "Auto Format", mode = "n" },
-    }
     require("conform").setup {
       formatters_by_ft = {
         go = { "golines", "goimports" },
