@@ -1,3 +1,5 @@
+[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
+
 # Load Homebrew Package Manager based on operating system
 if [[ $(uname) == "Darwin" ]]; then; eval "$(/opt/homebrew/bin/brew shellenv)"
 else; eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; fi
@@ -21,7 +23,7 @@ setopt INC_APPEND_HISTORY_TIME
 if [[ -d "$HOME/.nvm" ]]; then
 	export NVM_DIR="$HOME/.nvm"
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 fi
 
 type starship_zle-keymap-select >/dev/null || \
