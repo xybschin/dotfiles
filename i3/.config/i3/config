@@ -1,4 +1,5 @@
 exec_always "setxkbmap -layout eu"
+exec --no-startup-id nitrogen --restore
 
 set $mod Mod1
 
