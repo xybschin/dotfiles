@@ -1,6 +1,7 @@
-theme = Ayu
-font-family = Input Mono Compressed
+theme = ayu
+font-family = JetBrainsMono NerdFont
 font-size = 18
+window-decoration = none
 macos-titlebar-style = hidden
 window-padding-x = 6
 window-padding-y = 6
