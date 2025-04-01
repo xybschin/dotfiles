@@ -1,5 +1,6 @@
 exec_always "setxkbmap -layout eu"
-exec --no-startup-id nitrogen --restore
+exec_always "feh --bg-scale exec ~/.local/share/backgrounds/wp11976330-interstellar-black-hole-wallpapers.jpg"
+
 
 set $mod Mod1
 

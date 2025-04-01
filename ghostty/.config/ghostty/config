@@ -1,7 +1,7 @@
 theme = ayu
 font-family = JetBrainsMono NerdFont
 font-size = 11
-window-decoration = none
+window-decoration = server
 macos-titlebar-style = hidden
 window-padding-x = 6
 window-padding-y = 6
