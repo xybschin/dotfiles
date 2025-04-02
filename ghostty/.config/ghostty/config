@@ -5,3 +5,4 @@ window-decoration = server
 macos-titlebar-style = hidden
 window-padding-x = 6
 window-padding-y = 6
+confirm-close-surface = false
