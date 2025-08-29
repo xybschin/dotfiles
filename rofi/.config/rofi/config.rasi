@@ -12,19 +12,20 @@
 	red: #eb6f92;
 	yel: #f6c177;
 	muted: #6e6a86;
+	overlay: #26233a;
 
-	font: "JetBrainsMono Nerdfont 11";
+	font: "Segoe UI Bold 11";
 
 	foreground: @fgd;
 	background: @bg;
 	active-background: @grn;
 	urgent-background: @red;
 
-	selected-background: @active-background;
+	selected-background: @muted;
 	selected-urgent-background: @urgent-background;
 	selected-active-background: @active-background;
 	separatorcolor: @muted;
-	bordercolor: @muted;
+	bordercolor: @overlay;
 }
 
 #window {
@@ -41,22 +42,23 @@
 #message {
 	border:       1px solid 0px 0px;
 	border-color: @separatorcolor;
-	padding:      1px ;
+	padding:      19px;
 }
 #textbox {
 	text-color: @foreground;
+
 }
 #listview {
 	fixed-height: 0;
 	border:       1px solid 0px 0px ;
 	border-color: @bordercolor;
-	spacing:      2px ;
+	spacing:      2px;
 	scrollbar:    false;
-	padding:      2px 0px 0px ;
+	padding:      19px 0px;
 }
 #element {
 	border:  0;
-	padding: 1px ;
+	padding: 8px ;
 }
 #element.normal.normal {
 	background-color: @background;
@@ -111,7 +113,7 @@
 #inputbar {
 	spacing:    0;
 	text-color: @foreground;
-	padding:    1px ;
+	padding:    8px 4px;
 }
 #case-indicator {
 	spacing:    0;
@@ -119,14 +121,14 @@
 }
 #entry {
 	spacing:    0;
-	text-color: @cya;
+	text-color: @foreground;
 }
 #prompt {
 	spacing:    0;
 	text-color: @grn;
 }
 #inputbar {
-	children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+	children:   [ entry, case-indicator ];
 }
 #textbox-prompt-colon {
 	expand:     false;
