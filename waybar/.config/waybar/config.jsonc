@@ -101,7 +101,7 @@
   },
 
   "pulseaudio": {
-    "format": "{icon} {volume}%",
+    "format": "  {volume} %",
     "tooltip": false,
     "format-muted": " Muted",
     "on-click": "pamixer -t",
@@ -109,16 +109,6 @@
     "on-scroll-up": "pamixer -i 2",
     "on-scroll-down": "pamixer -d 2",
     "scroll-step": 5,
-    "format-icons": {
-      "line-out": "",
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""],
-    },
   },
 
   "pulseaudio#microphone": {
