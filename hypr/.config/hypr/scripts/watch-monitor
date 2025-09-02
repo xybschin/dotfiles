@@ -1,0 +1,17 @@
+#!/usr/bin/zsh
+
+SOCK="$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"
+
+socat -u UNIX-CONNECT:$SOCK - | while read -r line; do
+    if [[ "$line" == *"monitor"* ]]; then
+        if echo $(hyprctl monitors -j | jq '.[0].availableModes') | grep 5120; then
+		hyprctl keyword monitor "DP-1,5120x1440@144,auto,auto"
+		hyprctl keyword workspace "w[t1], gapsout:1 2561 1 1"
+	else
+		hyprctl keyword monitor "DP-1,2560x1440@120,auto,auto"
+		hyprctl keyword workspace "w[t1], gapsout:1"
+        fi
+    fi
+done
+
+
