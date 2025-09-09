@@ -5,7 +5,7 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "spacing": 4,
-  "modules-left": ["hyprland/workspaces", "custom/spotify"],
+  "modules-left": ["custom/arch", "hyprland/workspaces", "custom/spotify"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
     "network#traffic",
@@ -13,6 +13,7 @@
     "bluetooth",
     "memory",
     "pulseaudio",
+    "pulseaudio#microphone",
     "clock",
   ],
   "hyprland/window": {
@@ -21,10 +22,10 @@
       "": "Desktop",
     },
   },
-  "wlr/workspaces": {
+
+  "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
-    "on-click": "activate",
     "format": "{icon}",
     "format-icons": {
       "1": "1",
@@ -33,21 +34,13 @@
       "4": "4",
       "5": "5",
       "6": "6",
-      "7": "8",
-      "8": "9",
+      "7": "7",
+      "8": "8",
     },
-    "persistent_workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-      "6": [],
-      "7": [],
-      "8": [],
-      "9": [],
-      "10": [],
-    },
+  },
+
+  "custom/arch": {
+    "format": "󰣇",
   },
 
   "custom/weather": {
@@ -101,9 +94,9 @@
   },
 
   "pulseaudio": {
-    "format": "  {volume} %",
+    "format": "󰋋 {volume} %",
     "tooltip": false,
-    "format-muted": " Muted",
+    "format-muted": "󰟎  Muted",
     "on-click": "pamixer -t",
     "on-click-right": "pavucontrol",
     "on-scroll-up": "pamixer -i 2",
@@ -113,9 +106,10 @@
 
   "pulseaudio#microphone": {
     "format": "{format_source}",
-    "format-source": " {volume}%",
-    "format-source-muted": " Muted",
+    "format-source": " {volume}%",
+    "format-source-muted": "  Muted",
     "on-click": "pamixer --default-source -t",
+    "on-click-right": "pavucontrol",
     "on-scroll-up": "pamixer --default-source -i 5",
     "on-scroll-down": "pamixer --default-source -d 5",
     "scroll-step": 5,

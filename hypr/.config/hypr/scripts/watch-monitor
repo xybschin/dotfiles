@@ -10,11 +10,16 @@ function setres {
         fi
 }
 
+# Hyprland sends monitor events for each connected monitor
+# on start, but in case we start listening to the socket after
+# these initial events were emitted, we need to explicitly set 
+# the resolution.
 setres
 
 SOCK="$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"
 socat -u UNIX-CONNECT:$SOCK - | while read -r line; do
-    if [[ "$line" == *"monitor"* ]]; then
+    echo "$line"
+    if [[ "$line" == *"monitor"* ]] || [[ "$line" == *"configreloaded"* ]]; then
 	    setres
     fi
 done

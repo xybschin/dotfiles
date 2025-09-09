@@ -53,6 +53,7 @@ tooltip {
 
 #custom-power_profile,
 #custom-weather,
+#custom-arch,
 #window,
 #clock,
 #battery,
@@ -74,6 +75,10 @@ tooltip {
 
 #memory {
 	/* color: @foam; */
+}
+
+#custom-arch {
+	color: @pine;
 }
 
 #temperature {

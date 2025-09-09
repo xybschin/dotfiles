@@ -28,11 +28,18 @@
 	bordercolor: @overlay;
 }
 
+window {
+	location: west;
+	width: 399;
+	height: 100%;
+	margin: 1px 0px;
+}
+
 #window {
 	background-color: @background;
 	border:           1;
-	border-radius:    3;
-	border-color:     @bordercolor;
+	border-radius:    0;
+	border-color:     @separatorcolor;
 	padding:          5;
 }
 #mainbox {
