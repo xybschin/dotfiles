@@ -10,7 +10,7 @@
 }
 
 window#waybar {
-	background: rgba(0, 0, 0, 0.8);
+	background: rgba(0, 0, 0, 1);
 	color: @text;
 }
 
@@ -36,19 +36,19 @@ tooltip {
 #workspaces button.focused {
 	color: @text;
 	background: @love;
-	border-radius: 3px;
+	border-radius: 0px;
 }
 
 #workspaces button.urgent {
 	color: @base;
 	background: @pine;
-	border-radius: 3px;
+	border-radius: 0px;
 }
 
 #workspaces button:hover {
 	background: @highlightLow;
 	color: @text;
-	border-radius: 3px;
+	border-radius: 0px;
 }
 
 #custom-power_profile,
@@ -79,11 +79,12 @@ tooltip {
 
 #custom-arch {
 	color: @pine;
+
 }
 
 #temperature {
 	color: @rose;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 	border-right: 0px;
 }
 
@@ -104,7 +105,7 @@ tooltip {
 
 #workspaces {
 	background: @base;
-	border-radius: 0px 3px 3px 3px;
+	border-radius: 0px;
 	padding-right: 0px;
 	padding-left: 5px;
 	margin-left: 2px;
@@ -117,7 +118,7 @@ tooltip {
 }
 
 #window {
-	border-radius: 10px;
+	border-radius: 0px;
 	margin-left: 60px;
 	margin-right: 60px;
 }
@@ -132,14 +133,14 @@ tooltip {
 
 #network {
 	/* color: @love; */
-	border-radius: 3px 0px 0px 3px;
+	border-radius: 0px;
 	/* border-left: 0px; */
 	border-right: 0px;
 }
 
 #bluetooth {
 	/* color: @pine; */
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 0px;
 	border-right: 0px;
 	/* margin-right: 10px; */
 }
@@ -153,19 +154,19 @@ tooltip {
 	/* color: #c4a7e7; */
 	border-left: 0px;
 	border-right: 0px;
-	border-radius: 0px 10px 10px 0px;
+	border-radius: 0px;
 	margin-right: 10px;
 }
 
 #battery {
 	/* color: @foam; */
-	border-radius: 0 10px 10px 0;
+	border-radius: 0px;
 	margin-right: 10px;
 	border-left: 0px;
 }
 
 #custom-weather {
-	border-radius: 0px 10px 10px 0px;
+	border-radius: 0px;
 	/* border-right: 0px; */
 	margin-left: 0px;
 }

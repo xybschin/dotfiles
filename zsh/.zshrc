@@ -34,12 +34,6 @@ if [[ -d "$HOME/.nvm" ]]; then
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 fi
 
-type starship_zle-keymap-select >/dev/null || \
-  {
-    eval "$(starship init zsh)"
-  }
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
 alias lat=tree
 alias la="ls -al"
 alias ll="ls -l"
