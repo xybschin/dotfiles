@@ -917,7 +917,7 @@ require('lazy').setup({
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
   { -- Collection of various small independent plugins/modules
-    'echasnovski/mini.nvim',
+    'nvim-mini/mini.nvim',
     config = function()
       -- Better Around/Inside textobjects
       --
@@ -964,6 +964,7 @@ require('lazy').setup({
       require('mini.tabline').setup()
       require('mini.pairs').setup()
       require('mini.snippets').setup()
+      require('mini.bracketed').setup()
     end,
   },
   { -- Highlight, edit, and navigate code
