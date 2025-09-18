@@ -904,17 +904,38 @@ require('lazy').setup({
       require('rose-pine').setup {
         disable_background = true,
         styles = {
-          italics = false,
+          italic = false,
+        },
+
+        palette = {
+          main = {
+            base = '#000000',
+          },
+        },
+        highlight_groups = {
+          TelescopeBackground = { bg = 'none' },
+          TelescopeBorder = { fg = 'highlight_high', bg = 'none' },
+          TelescopeNormal = { bg = 'none' },
+          TelescopePromptNormal = { bg = 'none' },
+          TelescopeResultsNormal = { fg = 'subtle', bg = 'none' },
+          TelescopeSelection = { fg = 'text', bg = 'none' },
+          TelescopeSelectionCaret = { fg = 'rose', bg = 'rose' },
+          CurSearch = { fg = 'base', bg = 'rose', inherit = false },
+          Search = { bg = 'rose', blend = 20, inherit = false },
         },
       }
 
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'rose-pine-moon'
+      vim.cmd.colorscheme 'rose-pine'
 
-      vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-      vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+      vim.api.nvim_create_autocmd('ColorScheme', {
+        callback = function()
+          vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+          vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+        end,
+      })
     end,
   },
 
