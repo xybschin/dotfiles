@@ -47,3 +47,5 @@ alias cat=bat
 
 if [[ -n $SSH_CONNECTION ]]; then; export EDITOR='vim'
 else; export EDITOR=$(brew --prefix)/bin/nvim; fi
+
+eval "$(zoxide init zsh)"
