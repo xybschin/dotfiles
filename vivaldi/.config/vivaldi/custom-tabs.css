@@ -1,0 +1,33 @@
+#main {
+  background: var(--coloBg);
+}
+
+.tabs-left #tabs-tabbar-container .toolbar-tabbar-before {
+  padding: 0 !important;
+}
+
+.density-on .tabbar-wrapper > div:not(.tabbar-wrapper) {
+    padding-top: 0px;
+}
+
+#webview-container, #webpage-stack, .webpageview {
+  border-radius: 6px !important;
+}
+
+#webview-container {
+  margin: 0px 6px 6px 0px !important;
+}
+
+.theme-dark .tab.active {
+  background-color: #1f1f1f !important;
+  border-radius: 6px;
+}
+
+.theme-dark .tab:not(.active):hover {
+  background-color: #0f0f0f !important;
+}
+
+#tabs-tabbar-container > button:active {
+  background: var(--colorHighlightBg) !important;
+}
+

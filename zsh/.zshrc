@@ -39,11 +39,14 @@ type starship_zle-keymap-select >/dev/null || \
     eval "$(starship init zsh)"
   }
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export EDITOR=nvim
 
 alias lat=tree
 alias la="ls -al"
 alias ll="ls -l"
 alias cat=bat
+alias vi=nvim
+alias vim=nvim
 
 if [[ -n $SSH_CONNECTION ]]; then; export EDITOR='vim'
 else; export EDITOR=$(brew --prefix)/bin/nvim; fi

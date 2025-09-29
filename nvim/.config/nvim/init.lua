@@ -912,6 +912,7 @@ require('lazy').setup({
             base = '#000000',
           },
         },
+
         highlight_groups = {
           TelescopeBackground = { bg = 'none' },
           TelescopeBorder = { fg = 'highlight_high', bg = 'none' },
