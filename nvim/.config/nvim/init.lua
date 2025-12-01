@@ -168,6 +168,13 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Tabs
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.smarttab = true
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -231,6 +238,12 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     error('Error cloning lazy.nvim:\n' .. out)
   end
 end
+
+-- Mitigate bad typing skills
+vim.api.nvim_create_user_command('W', 'w', {})
+vim.api.nvim_create_user_command('Q', 'q', {})
+vim.api.nvim_create_user_command('WQ', 'wq', {})
+vim.api.nvim_create_user_command('Wq', 'wq', {})
 
 ---@type vim.Option
 local rtp = vim.opt.rtp
@@ -771,13 +784,10 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        json = { 'prettierd', 'prettier' },
-        jsonc = { 'prettierd', 'prettier' },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
-        -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        json = { 'prettierd', 'prettier', stop_after_first = true },
+        jsonc = { 'prettierd', 'prettier', stop_after_first = true },
+        sh = { 'beautysh' },
+        python = { 'isort', 'black' },
       },
     },
   },
@@ -892,53 +902,54 @@ require('lazy').setup({
     --   vim.cmd.colorscheme 'jellybeans-mono'
     -- end,
   },
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
-    --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'rose-pine/neovim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    config = function()
-      ---@diagnostic disable-next-line: missing-fields
-      require('rose-pine').setup {
-        disable_background = true,
-        styles = {
-          italic = false,
-        },
-
-        palette = {
-          main = {
-            base = '#000000',
-          },
-        },
-
-        highlight_groups = {
-          TelescopeBackground = { bg = 'none' },
-          TelescopeBorder = { fg = 'highlight_high', bg = 'none' },
-          TelescopeNormal = { bg = 'none' },
-          TelescopePromptNormal = { bg = 'none' },
-          TelescopeResultsNormal = { fg = 'subtle', bg = 'none' },
-          TelescopeSelection = { fg = 'text', bg = 'none' },
-          TelescopeSelectionCaret = { fg = 'rose', bg = 'rose' },
-          CurSearch = { fg = 'base', bg = 'rose', inherit = false },
-          Search = { bg = 'rose', blend = 20, inherit = false },
-        },
-      }
-
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'rose-pine'
-
-      vim.api.nvim_create_autocmd('ColorScheme', {
-        callback = function()
-          vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-          vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-        end,
-      })
-    end,
-  },
+  { 'blazkowolf/gruber-darker.nvim' },
+  -- { -- You can easily change to a different colorscheme.
+  --   -- Change the name of the colorscheme plugin below, and then
+  --   -- change the command in the config to whatever the name of that colorscheme is.
+  --   --
+  --   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+  --   'rose-pine/neovim',
+  --   priority = 1000, -- Make sure to load this before all the other start plugins.
+  --   config = function()
+  --     ---@diagnostic disable-next-line: missing-fields
+  --     require('rose-pine').setup {
+  --       disable_background = true,
+  --       styles = {
+  --         italic = false,
+  --       },
+  --
+  --       palette = {
+  --         main = {
+  --           base = '#000000',
+  --         },
+  --       },
+  --
+  --       highlight_groups = {
+  --         TelescopeBackground = { bg = 'none' },
+  --         TelescopeBorder = { fg = 'highlight_high', bg = 'none' },
+  --         TelescopeNormal = { bg = 'none' },
+  --         TelescopePromptNormal = { bg = 'none' },
+  --         TelescopeResultsNormal = { fg = 'subtle', bg = 'none' },
+  --         TelescopeSelection = { fg = 'text', bg = 'none' },
+  --         TelescopeSelectionCaret = { fg = 'rose', bg = 'rose' },
+  --         CurSearch = { fg = 'base', bg = 'rose', inherit = false },
+  --         Search = { bg = 'rose', blend = 20, inherit = false },
+  --       },
+  --     }
+  --
+  --     -- Load the colorscheme here.
+  --     -- Like many other themes, this one has different styles, and you could load
+  --     -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+  --     vim.cmd.colorscheme 'rose-pine'
+  --
+  --     vim.api.nvim_create_autocmd('ColorScheme', {
+  --       callback = function()
+  --         vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+  --         vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+  --       end,
+  --     })
+  --   end,
+  -- },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
