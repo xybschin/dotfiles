@@ -1,4 +1,4 @@
-PROMPT="[%n@%F{red}%m%f %1~] "
+PROMPT="[%n@%F{magenta}%m%f %1~] "
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000
