@@ -902,7 +902,12 @@ require('lazy').setup({
     --   vim.cmd.colorscheme 'jellybeans-mono'
     -- end,
   },
-  { 'blazkowolf/gruber-darker.nvim' },
+  {
+    'blazkowolf/gruber-darker.nvim',
+    config = function()
+      vim.cmd.colorscheme 'gruber-darker'
+    end,
+  },
   -- { -- You can easily change to a different colorscheme.
   --   -- Change the name of the colorscheme plugin below, and then
   --   -- change the command in the config to whatever the name of that colorscheme is.
@@ -991,12 +996,6 @@ require('lazy').setup({
       --  Check out: https://github.com/echasnovski/mini.nvim
 
       require('mini.bracketed').setup()
-      local mini_files = require 'mini.files'
-
-      mini_files.setup()
-
-      vim.keymap.set('n', '<leader><CR>', mini_files.open, { desc = 'Open file tree' })
-
       require('mini.jump').setup()
       require('mini.align').setup()
       require('mini.tabline').setup()
@@ -1029,6 +1028,20 @@ require('lazy').setup({
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  },
+  {
+    'X3eRo0/dired.nvim',
+    dependencies = { 'MunifTanjim/nui.nvim' },
+    config = function()
+      require('dired').setup {
+        path_separator = '/',
+        show_banner = false,
+        show_icons = false,
+        show_hidden = true,
+        show_dot_dirs = true,
+        show_colors = true,
+      }
+    end,
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
