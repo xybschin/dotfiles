@@ -1,0 +1,19 @@
+configuration {
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+  modes: [ combi ];
+  combi-modes: [ drun, run ];
+  display-combi: "";
+  display-drun: "";
+  display-run: "";
+  display-window: "";
+}
+
+@theme "dmenu"
+
