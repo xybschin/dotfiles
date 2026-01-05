@@ -1,0 +1,51 @@
+* {
+    font-family: FontAwesome, "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+window#waybar {
+    background-color: #141415;
+    color: #ffffff;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+}
+
+#custom-fedora {
+    margin-left: 1px;
+    background-color: #252530;
+    color: white;
+    padding: 0 16px;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    background-color: #252530;
+    color: #ffffff;
+}
+
+#workspaces button.active {
+    background-color: #cdcdcd;
+    color: black;
+    font-weight: bold;
+}
+
+/* Apply a right margin and separator to modules on the right */
+.modules-right > widget > * {
+    margin: 6px 13px 12px 0;
+    padding: 0px 12px 0px 0px;
+    border-right: 2px solid #d8647e;
+}
+
+.modules-right > widget:last-child > * {
+    margin-right: 1px;
+    padding: 0;
+    border-right: 0;
+}

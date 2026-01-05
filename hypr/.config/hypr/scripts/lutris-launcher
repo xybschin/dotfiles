@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+
+import json
+import os
+import stat
+from pathlib import Path
+
+tmp = os.popen("lutris -ojl").read()
+games = json.loads(tmp)
+
+desktop_dir = Path.home() / ".local" / "share" / "applications"
+desktop_dir.mkdir(parents=True, exist_ok=True)
+
+for game in games:
+    exec_cmd = f"lutris lutris:rungameid/{game["id"]}"
+    content = f"[Desktop Entry]\nType=Application\nName={game["name"]}\nExec={
+        exec_cmd}\nIcon=application-x-executable\nTerminal=false\nCategories=Game;"
+    file_name = game["name"]
+    with open(f"{desktop_dir}/{file_name}.desktop", "w") as f:
+        f.write(content)
