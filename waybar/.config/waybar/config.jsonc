@@ -1,8 +1,7 @@
 // -*- mode: jsonc -*-
 {
-  "height": 32, // Waybar height (to be removed for auto height)
   "spacing": 4, // Gaps between modules (4px)
-  "modules-left": ["custom/fedora", "hyprland/workspaces", "custom/media"],
+  "modules-left": ["custom/arch", "hyprland/workspaces", "custom/media"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
     "pulseaudio",
@@ -107,8 +106,8 @@
     "exec": "uptime -p",
     "interval": 30,
   },
-  "custom/fedora": {
-    "format": "",
+  "custom/arch": {
+    "format": "",
     "interval": 3600,
   },
 }
