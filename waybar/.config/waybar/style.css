@@ -26,7 +26,6 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 10px;
     background-color: #252530;
     color: #ffffff;
 }
@@ -39,8 +38,8 @@ button:hover {
 
 /* Apply a right margin and separator to modules on the right */
 .modules-right > widget > * {
-    margin: 6px 13px 12px 0;
-    padding: 0px 12px 0px 0px;
+    margin: 6px 6px 6px 6px;
+    padding-right: 12px;
     border-right: 2px solid #d8647e;
 }
 

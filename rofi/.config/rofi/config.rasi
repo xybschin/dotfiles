@@ -12,8 +12,25 @@ configuration {
   display-combi: "";
   display-drun: "";
   display-run: "";
-  display-window: "";
 }
 
 @theme "dmenu"
 
+* {
+    font: "JetBrainsMono Nerd Font 11";
+}
+
+window {
+    background-color: #141415;
+    border: 1px;
+    border-color: #cdcdcd;
+    border-radius: 0px;
+    margin: 1px;
+}
+
+element-text {
+  font: "JetBrainsMono Nerd Font 12";
+  horizontal-align: 0.3;
+  vertical-align: 0.3;
+  element-texk: "{name}";
+}

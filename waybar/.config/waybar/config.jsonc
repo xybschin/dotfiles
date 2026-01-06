@@ -1,6 +1,5 @@
 // -*- mode: jsonc -*-
 {
-  "height": 32, // Waybar height (to be removed for auto height)
   "spacing": 4, // Gaps between modules (4px)
   "modules-left": ["custom/arch", "hyprland/workspaces", "custom/media"],
   "modules-center": ["hyprland/window"],
