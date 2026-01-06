@@ -40,7 +40,7 @@ button:hover {
 .modules-right > widget > * {
     margin: 6px 6px 6px 6px;
     padding-right: 12px;
-    border-right: 2px solid #d8647e;
+    border-right: 1px solid #cdcdcd;
 }
 
 .modules-right > widget:last-child > * {
