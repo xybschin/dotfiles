@@ -1,12 +1,12 @@
 * {
-    font-family: FontAwesome, "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+    font-family: FontAwesome, "JetBrainsMono Nerd Font";
     font-size: 13px;
     font-weight: 600;
 }
 
 window#waybar {
     background-color: #141415;
-    color: #ffffff;
+    color: #cdcdcd;
 }
 
 button {
@@ -19,32 +19,37 @@ button:hover {
 }
 
 #custom-arch {
-    margin-left: 1px;
     background-color: #252530;
-    color: white;
-    padding: 0 16px;
+    color: #cdcdcd;
+    min-width: 52px;
+    margin-left: 1px;
+}
+
+#custom-media {
+    margin-left: 24px;
 }
 
 #workspaces button {
     background-color: #252530;
-    color: #ffffff;
+    color: #cdcdcd;
+    min-width: 32px;
+    font-weight: bold;
 }
 
 #workspaces button.active {
     background-color: #cdcdcd;
-    color: black;
-    font-weight: bold;
+    color: #252530;
 }
 
 /* Apply a right margin and separator to modules on the right */
 .modules-right > widget > * {
-    margin: 6px 6px 6px 6px;
-    padding-right: 12px;
-    border-right: 1px solid #cdcdcd;
+    margin: 14px 6px 14px 4px;
+    padding: 0px 12px;
+    border-right: 4px solid #878787;
 }
 
 .modules-right > widget:last-child > * {
-    margin-right: 1px;
-    padding: 0;
-    border-right: 0;
+    margin-right: 12px;
+    border: 0px;
 }
+
