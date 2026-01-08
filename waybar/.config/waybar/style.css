@@ -45,7 +45,7 @@ button:hover {
 .modules-right > widget > * {
     margin: 14px 6px 14px 4px;
     padding: 0px 12px;
-    border-right: 4px solid #878787;
+    border-right: 3px solid #878787;
 }
 
 .modules-right > widget:last-child > * {
