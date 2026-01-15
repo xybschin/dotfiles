@@ -909,6 +909,18 @@ require('lazy').setup({
     end,
   },
 
+  {
+    -- 'oskarnurm/koda.nvim',
+    -- lazy = false,
+    -- priority = 1000,
+    -- config = function()
+    --   require('koda').setup {
+    --     transparent = true,
+    --   }
+    --   vim.cmd 'colorscheme koda'
+    -- end,
+  },
+
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 

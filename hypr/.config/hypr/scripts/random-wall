@@ -1,4 +1,4 @@
 #!/usr/bin/zsh
 
-swww-daemon || sleep 0.1 & swww img $(ls ~/.config/hypr/wallpaper/* | shuf -n1) --transition-type none
+swww-daemon || sleep 0.1 & swww img $(ls ~/.config/hypr/wallpaper/* | shuf -n1)
 
