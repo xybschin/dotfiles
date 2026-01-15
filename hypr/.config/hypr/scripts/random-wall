@@ -1,4 +1,14 @@
-#!/usr/bin/zsh
+#!/usr/bin/bash
 
-swww-daemon || sleep 0.1 & swww img $(ls ~/.config/hypr/wallpaper/* | shuf -n1)
+WALLPAPER_DIR="$HOME/.config/hypr/wallpaper"
 
+CURRENT_WALLPAPER=$(awww query | sed -n 's/.*image: //p' | sed 's#.*/##')
+NEXT_WALLPAPER=$(ls "$WALLPAPER_DIR" | grep -vxF "$CURRENT_WALLPAPER" | shuf -n1)
+
+echo "current wallpaper is: $CURRENT_WALLPAPER"
+echo "next wallpaper is:    $NEXT_WALLPAPER"
+
+[[ -z "$NEXT_WALLPAPER" ]] && NEXT_WALLPER="$CURRENT_WALLPAPER"
+
+awww-daemon >/dev/null 2>&1 || sleep 0.1
+awww img "$WALLPAPER_DIR/$NEXT_WALLPAPER" --transition-type simple --transition-step 1 --transition-fps 100

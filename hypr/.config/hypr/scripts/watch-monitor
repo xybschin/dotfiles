@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/usr/bin/bash
 
 function setres {
         if echo $(hyprctl monitors -j | jq '.[0].availableModes') | grep 5120; then

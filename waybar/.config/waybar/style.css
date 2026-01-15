@@ -5,7 +5,8 @@
 }
 
 window#waybar {
-    background-color: #141415;
+    /* background-color: #141415; */
+    background-color: rgba(20, 20, 21, 0.5);
     color: #cdcdcd;
 }
 
@@ -52,4 +53,5 @@ button:hover {
     margin-right: 12px;
     border: 0px;
 }
+
 
