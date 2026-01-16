@@ -1,11 +1,9 @@
 // -*- mode: jsonc -*-
 {
-    "spacing": 4, // Gaps between modules (4px)
-    "height": 47,
     "position": "bottom",
     "layer": "top",
     "modules-left": [
-        "custom/arch",
+        // "custom/arch",
         "hyprland/workspaces",
         "custom/media"
     ],
@@ -16,13 +14,15 @@
         "pulseaudio",
         "custom/uptime",
         "network",
-        "clock",
-        "tray"
+        "clock"
     ],
     "hyprland/workspaces": {
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{name}"
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": 3
+        }
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -93,7 +93,7 @@
     },
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "({ifname}) {ipaddr}/{cidr} {bandwidthDownBits} ↓ {bandwidthUpBits} ↑",
+        "format-ethernet": "({ifname}) {ipaddr}/{cidr} ↓ {bandwidthDownBits} ↑ {bandwidthUpBits}",
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
@@ -102,7 +102,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
+        "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",

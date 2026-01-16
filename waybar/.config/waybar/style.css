@@ -6,7 +6,7 @@
 
 window#waybar {
     /* background-color: #141415; */
-    background-color: rgba(20, 20, 21, 0.5);
+    background-color: rgba(20, 20, 21, 0.4);
     color: #cdcdcd;
 }
 
@@ -34,7 +34,6 @@ button:hover {
     background-color: #252530;
     color: #cdcdcd;
     min-width: 32px;
-    font-weight: bold;
 }
 
 #workspaces button.active {
@@ -42,15 +41,14 @@ button:hover {
     color: #252530;
 }
 
-/* Apply a right margin and separator to modules on the right */
 .modules-right > widget > * {
-    margin: 14px 6px 14px 4px;
-    padding: 0px 12px;
-    border-right: 3px solid #878787;
+    margin: 16px 0;
+    padding: 0px 1rem;
+    border-right: 1px solid #878787;
 }
 
 .modules-right > widget:last-child > * {
-    margin-right: 12px;
+    margin-right: 0;
     border: 0px;
 }
 
