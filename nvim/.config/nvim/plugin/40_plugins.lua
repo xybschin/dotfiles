@@ -60,6 +60,13 @@ now_if_args(function()
 		"lua",
 		"vimdoc",
 		"markdown",
+    "css",
+    "json",
+    "jsonc",
+    "go",
+    "c_sharp",
+    "rust",
+    "python",
 		-- Add here more languages with which you want to use tree-sitter
 		-- To see available languages:
 		-- - Execute `:=require('nvim-treesitter').get_available()`
@@ -96,7 +103,7 @@ end)
 --
 -- Here Neovim itself is a client (see `:h vim.lsp`). Language servers need to
 -- be installed separately based on your OS, CLI tools, and preferences.
--- See note about 'mason.nvim' at the bottom of the file.
+-- See python about 'mason.nvim' at the bottom of the file.
 --
 -- Neovim's team collects commonly used configurations for most language servers
 -- inside 'neovim/nvim-lspconfig' plugin.
