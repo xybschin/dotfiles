@@ -3,7 +3,7 @@
     "position": "bottom",
     "layer": "bottom",
     "modules-left": [
-        // "custom/arch",
+        "custom/arch",
         "hyprland/workspaces",
         "custom/media"
     ],

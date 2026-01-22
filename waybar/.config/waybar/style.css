@@ -3,6 +3,7 @@
 @define-color foreground                #cdcdcd;
 @define-color selection-foreground      #cdcdcd;
 @define-color divider                   #878787;
+@define-color arch-brand                #1793d1;
 
 * {
     font-family: FontAwesome, "JetBrainsMono Nerd Font";
@@ -12,8 +13,8 @@
 
 window#waybar {
     background-color: alpha(@background, 0.3);
+    border-top: 1px solid alpha(@divider, 0.09);
     color: @foreground;
-    border-top: 1px solid alpha(@divider, 0.05);
 }
 
 button {
@@ -26,19 +27,22 @@ button:hover {
 }
 
 #custom-arch {
-    background-color: @selection-background;
-    color: #cdcdcd;
     min-width: 52px;
-    margin-left: 1px;
+    background-color: @selection-background;
+    color: @arch-brand;
 }
 
 #custom-media {
     margin-left: 24px;
 }
 
+#custom-arch,
 #workspaces button {
     margin: 6px 0px 6px 6px;
     border-radius: 6px;
+}
+
+#workspaces button {
     background-color: @selection-background;
     color: @selection-foreground;
 }
