@@ -62,9 +62,7 @@ now_if_args(function()
 		"markdown",
     "css",
     "json",
-    "jsonc",
     "go",
-    "c_sharp",
     "rust",
     "python",
 		-- Add here more languages with which you want to use tree-sitter
