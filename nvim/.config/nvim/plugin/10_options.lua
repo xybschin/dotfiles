@@ -23,6 +23,7 @@ vim.o.mousescroll = 'ver:25,hor:6' -- Customize mouse scroll
 vim.o.switchbuf   = 'usetab'       -- Use already opened buffers when switching
 vim.o.undofile    = true           -- Enable persistent undo
 
+
 vim.o.shada = "'100,<50,s10,:1000,/100,@100,h" -- Limit ShaDa file (for startup)
 
 -- Enable all filetype plugins and syntax (if not enabled, for better startup)
@@ -47,8 +48,12 @@ vim.o.splitkeep      = 'screen'   -- Reduce scroll during window split
 vim.o.splitright     = true       -- Vertical splits will be to the right
 vim.o.winborder      = 'single'   -- Use border in floating windows
 vim.o.wrap           = false      -- Don't visually wrap lines (toggle with \w)
+
 vim.o.updatetime     = 250
 vim.o.timeoutlen     = 300
+vim.o.relativenumber = false
+vim.o.nu             = true
+vim.o.statuscolumn   = "%s %l %r"
 
 vim.o.cursorlineopt  = 'screenline,number' -- Show cursor line per screen line
 

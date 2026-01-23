@@ -60,11 +60,11 @@ now_if_args(function()
 		"lua",
 		"vimdoc",
 		"markdown",
-    "css",
-    "json",
-    "go",
-    "rust",
-    "python",
+		"css",
+		"json",
+		"go",
+		"rust",
+		"python",
 		-- Add here more languages with which you want to use tree-sitter
 		-- To see available languages:
 		-- - Execute `:=require('nvim-treesitter').get_available()`
@@ -148,5 +148,20 @@ end)
 
 now(function()
 	add("vague-theme/vague.nvim")
-	vim.cmd("color vague")
+	vim.cmd("colorscheme vague")
+end)
+
+now(function()
+	add({
+		source = "X3eRo0/dired.nvim",
+		depends = { "MunifTanjim/nui.nvim" },
+	})
+	require("dired").setup({
+		path_separator = "/",
+		show_banner = false,
+		show_icons = false,
+		show_hidden = true,
+		show_dot_dirs = true,
+		show_colors = true,
+	})
 end)
