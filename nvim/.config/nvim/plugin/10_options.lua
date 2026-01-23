@@ -18,10 +18,11 @@
 -- General ====================================================================
 vim.g.mapleader = ' ' -- Use `<Space>` as <Leader> key
 
-vim.o.mouse       = ''             -- Enable mouse
-vim.o.mousescroll = 'ver:25,hor:6' -- Customize mouse scroll
-vim.o.switchbuf   = 'usetab'       -- Use already opened buffers when switching
-vim.o.undofile    = true           -- Enable persistent undo
+vim.o.mouse         = ''             -- Disable mouse
+vim.o.mousescroll   = 'ver:25,hor:6' -- Customize mouse scroll
+vim.o.switchbuf     = 'usetab'       -- Use already opened buffers when switching
+vim.o.undofile      = true           -- Enable persistent undo
+vim.o.termguicolors = true           -- Enables 24-bit RGB color in the TUI
 
 
 vim.o.shada = "'100,<50,s10,:1000,/100,@100,h" -- Limit ShaDa file (for startup)
@@ -38,6 +39,7 @@ vim.o.cursorline     = true       -- Enable current line highlighting
 vim.o.linebreak      = true       -- Wrap lines at 'breakat' (if 'wrap' is set)
 vim.o.list           = true       -- Show helpful text indicators
 vim.o.number         = true       -- Show line numbers
+vim.o.relativenumber = true       -- Show relative line numbers
 vim.o.pumheight      = 10         -- Make popup menu smaller
 vim.o.ruler          = false      -- Don't show cursor coordinates
 vim.o.shortmess      = 'CFOSWaco' -- Disable some built-in completion messages
@@ -51,9 +53,6 @@ vim.o.wrap           = false      -- Don't visually wrap lines (toggle with \w)
 
 vim.o.updatetime     = 250
 vim.o.timeoutlen     = 300
-vim.o.relativenumber = false
-vim.o.nu             = true
-vim.o.statuscolumn   = "%s %l %r"
 
 vim.o.cursorlineopt  = 'screenline,number' -- Show cursor line per screen line
 
@@ -126,8 +125,6 @@ local diagnostic_opts = {
 
 -- Use `later()` to avoid sourcing `vim.diagnostic` on startup
 MiniDeps.later(function() vim.diagnostic.config(diagnostic_opts) end)
--- stylua: ignore end
--- Autohighlight word under cursor with a customizable delay.
 
 vim.api.nvim_create_autocmd("UIEnter", {
 	callback = function()
@@ -139,10 +136,8 @@ vim.api.nvim_create_autocmd("UIEnter", {
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
--- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
--- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
--- is not what someone will guess without a bit more experience.
---
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+-- stylua: ignore end
