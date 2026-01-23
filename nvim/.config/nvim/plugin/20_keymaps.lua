@@ -114,7 +114,7 @@ end
 nmap_leader('ed', '<Cmd>Dired<CR>',                         'Directory')
 nmap_leader('ef', '<CMD>lua _G.explore_at_file()<CR>',      'File directory')
 nmap_leader('ei', '<Cmd>edit $MYVIMRC<CR>',                 'init.lua')
-nmap_leader('ek', edit_plugin_file('18_keymaps.lua'),       'Keymaps config')
+nmap_leader('ek', edit_plugin_file('20_keymaps.lua'),       'Keymaps config')
 nmap_leader('em', edit_plugin_file('30_mini.lua'),          'MINI config')
 nmap_leader('en', '<Cmd>lua MiniNotify.show_history()<CR>', 'Notifications')
 nmap_leader('eo', edit_plugin_file('10_options.lua'),       'Options config')
