@@ -56,20 +56,14 @@ now_if_args(function()
 
 	-- Define languages which will have parsers installed and auto enabled
 	local languages = {
-		-- These are already pre-installed with Neovim. Used as an example.
 		"lua",
 		"vimdoc",
 		"markdown",
 		"css",
 		"json",
-		"go",
-		"rust",
 		"python",
-		-- Add here more languages with which you want to use tree-sitter
-		-- To see available languages:
-		-- - Execute `:=require('nvim-treesitter').get_available()`
-		-- - Visit 'SUPPORTED_LANGUAGES.md' file at
-		--   https://github.com/nvim-treesitter/nvim-treesitter/blob/main
+		"bash",
+		"c_sharp",
 	}
 	local isnt_installed = function(lang)
 		return #vim.api.nvim_get_runtime_file("parser/" .. lang .. ".*", false) == 0

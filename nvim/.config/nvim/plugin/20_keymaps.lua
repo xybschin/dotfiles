@@ -100,11 +100,10 @@ nmap_leader('bW', '<Cmd>lua MiniBufremove.wipeout(0, true)<CR>', 'Wipeout!')
 local edit_plugin_file = function(filename)
   return string.format('<Cmd>edit %s/plugin/%s<CR>', vim.fn.stdpath('config'), filename)
 end
-local function explore_at_file()
+_G.explore_at_file = function()
   local bufname = vim.api.nvim_buf_get_name(0)
   vim.cmd('Dired' ..vim.fn.fnameescape(bufname))
 end
-_G.explore_at_file = explore_at_file
 local explore_quickfix = function()
   vim.cmd(vim.fn.getqflist({ winid = true }).winid ~= 0 and 'cclose' or 'copen')
 end
