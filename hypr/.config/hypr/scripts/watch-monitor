@@ -1,8 +1,7 @@
-#!/usr/bin/zsh
+#!/usr/bin/bash
 
 function setres {
         if echo $(hyprctl monitors -j | jq '.[0].availableModes') | grep 5120; then
-		echo 5120
 		hyprctl keyword monitor "DP-1,5120x1440@144,auto,auto"
 		hyprctl keyword workspace "w[t1], gapsout:1 2561 1 1"
 	else

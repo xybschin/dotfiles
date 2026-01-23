@@ -1,3 +1,10 @@
+@define-color background                #141415;
+@define-color selection-background      #252530;
+@define-color foreground                #cdcdcd;
+@define-color selection-foreground      #cdcdcd;
+@define-color divider                   #878787;
+@define-color arch-brand                #1793d1;
+
 * {
     font-family: FontAwesome, "JetBrainsMono Nerd Font";
     font-size: 13px;
@@ -5,8 +12,9 @@
 }
 
 window#waybar {
-    background-color: #141415;
-    color: #cdcdcd;
+    background-color: alpha(@background, 0.3);
+    border-top: 1px solid alpha(@divider, 0.09);
+    color: @foreground;
 }
 
 button {
@@ -19,37 +27,40 @@ button:hover {
 }
 
 #custom-arch {
-    background-color: #252530;
-    color: #cdcdcd;
     min-width: 52px;
-    margin-left: 1px;
+    background-color: @selection-background;
+    color: @arch-brand;
 }
 
 #custom-media {
     margin-left: 24px;
 }
 
+#custom-arch,
 #workspaces button {
-    background-color: #252530;
-    color: #cdcdcd;
-    min-width: 32px;
-    font-weight: bold;
+    margin: 6px 0px 6px 6px;
+    border-radius: 6px;
+}
+
+#workspaces button {
+    background-color: @selection-background;
+    color: @selection-foreground;
 }
 
 #workspaces button.active {
-    background-color: #cdcdcd;
-    color: #252530;
+    background-color: @selection-foreground;
+    color: @selection-background;
 }
 
-/* Apply a right margin and separator to modules on the right */
 .modules-right > widget > * {
-    margin: 14px 6px 14px 4px;
-    padding: 0px 12px;
-    border-right: 3px solid #878787;
+    margin: 16px 0;
+    padding: 0px 1rem;
+    border-right: 1px solid @divider;
 }
 
 .modules-right > widget:last-child > * {
-    margin-right: 12px;
+    margin-right: 0;
     border: 0px;
 }
+
 
