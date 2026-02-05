@@ -11,19 +11,27 @@ setopt INC_APPEND_HISTORY_TIME
 
 source <(fzf --zsh)
 
-export FZF_DEFAULT_OPTS="
-    --color=fg:#cdcdcd
-    --color=bg:#141415
-    --color=hl:#f3be7c
-    --color=fg+:#aeaed1
-    --color=bg+:#252530
-    --color=hl+:#f3be7c
-    --color=border:#606079
-    --color=header:#6e94b2
-    --color=gutter:#141415
-    --color=spinner:#7fa563
-    --color=info:#f3be7c
-    --color=pointer:#aeaed1
-    --color=marker:#d8647e
-    --color=prompt:#bb9dbd
-    --layout='reverse'"
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+  --highlight-line \
+  --info=inline-right \
+  --ansi \
+  --layout=reverse \
+  --border=none \
+  --color=bg+:#272727 \
+  --color=bg:#101010 \
+  --color=border:#ffffff \
+  --color=fg:#b0b0b0 \
+  --color=fg+:#ffffff \
+  --color=gutter:#101010 \
+  --color=header:#ffffff \
+  --color=hl+:#d9ba73 \
+  --color=hl:#d9ba73 \
+  --color=info:#50585d \
+  --color=marker:#ff7676 \
+  --color=pointer:#ffffff \
+  --color=prompt:#86cd82 \
+  --color=query:#b0b0b0:regular \
+  --color=scrollbar:#b0b0b0 \
+  --color=separator:#ffffff \
+  --color=spinner:#50585d \
+"
