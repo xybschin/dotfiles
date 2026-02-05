@@ -15,4 +15,8 @@ config.tab_max_width = 32
 
 config.window_padding = { left = '.5cell', top = '.3cell', bottom = '.3cell', right = '.5cell' }
 
+config.keys = {
+  { key = 'l', mods = 'CTRL', action = wezterm.action.ShowLauncher },
+}
+
 return config
