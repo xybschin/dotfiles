@@ -1,8 +1,9 @@
-@define-color background                #141415;
-@define-color selection-background      #252530;
-@define-color foreground                #cdcdcd;
-@define-color selection-foreground      #cdcdcd;
+@define-color background                #101010;
+@define-color selection-background      #272727;
+@define-color foreground                #ffffff;
+@define-color selection-foreground      #b0b0b0;
 @define-color divider                   #878787;
+@define-color highlight                 #a3d6a3;
 @define-color arch-brand                #1793d1;
 
 * {
@@ -12,8 +13,7 @@
 }
 
 window#waybar {
-    background-color: alpha(@background, 0.3);
-    border-top: 1px solid alpha(@divider, 0.09);
+    background-color: alpha(@background, 0.85);
     color: @foreground;
 }
 
@@ -36,22 +36,18 @@ button:hover {
     margin-left: 24px;
 }
 
-#custom-arch,
-#workspaces button {
-}
-
 #workspaces button {
     background-color: @selection-background;
     color: @selection-foreground;
 }
 
 #workspaces button.active {
-    background-color: @selection-foreground;
+    background-color: @highlight;
     color: @selection-background;
 }
 
 .modules-right > widget > * {
-    margin: 16px 0;
+    margin: 8px 0;
     padding: 0px 1rem;
     border-right: 1px solid @divider;
 }

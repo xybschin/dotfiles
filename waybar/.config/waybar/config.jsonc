@@ -3,7 +3,6 @@
     "position": "bottom",
     "layer": "bottom",
     "modules-left": [
-        "custom/arch",
         "hyprland/workspaces",
         "custom/media"
     ],
@@ -12,50 +11,15 @@
     ],
     "modules-right": [
         "pulseaudio",
-        "custom/uptime",
         "network",
+        "memory",
+        "cpu",
         "clock"
     ],
     "hyprland/workspaces": {
         "all-outputs": true,
         "warp-on-scroll": false,
         "format": "{name}",
-        "persistent-workspaces": {
-            "*": 3
-        }
-    },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
     },
     "tray": {
         // "icon-size": 21,
@@ -66,43 +30,28 @@
         // }
     },
     "clock": {
-        "format": "{:%d.%m %H:%M}",
+        "format": "{:%Y-%d-%m %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "CPU {usage}%",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
-    },
-    "backlight": {
-        "format": "{percent}% {icon}",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+        "format": "MEM {}%"
     },
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "({ifname}) {ipaddr}/{cidr} ↓ {bandwidthDownBits} ↑ {bandwidthUpBits}",
+        "format-ethernet": "({ifname}) {ipaddr}/{cidr} DOWN {bandwidthDownBits} UP {bandwidthUpBits}",
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "interval": 2
+        "interval": 4
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
+        "format": "VOL {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
@@ -132,10 +81,10 @@
         "interval": 3600
     },
     "custom/media": {
-        "format": "󰝚 {}",
+        "format": "NOW PLAYING: {}",
         "exec": "playerctl metadata --format '{{title}} - {{artist}}'",
-        "interval": 2,
-        "max-length": 40,
+        "interval": 5,
+        "max-length": 80,
         "escape": true,
         "tooltip": true,
         "tooltip-format": "{}"
