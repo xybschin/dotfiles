@@ -11,10 +11,10 @@
 configuration {
     modi:                       "drun,run";
     show-icons:                 false;
-    display-drun:               "";
-    display-run:                "";
-    display-filebrowser:        "";
-    display-window:             "";
+    display-drun:               "DRUN";
+    display-run:                "RUN";
+    display-filebrowser:        "FILE";
+    display-window:             "WINDOW";
     drun-display-format:        "{name}";
     window-format:              "{w} · {c} · {t}";
 }
