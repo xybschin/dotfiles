@@ -20,14 +20,14 @@ configuration {
 }
 
 * {
-    font: "JetBrains Mono Nerd Font 11";
+    font: "JetBrains Mono Nerd Font 10";
 
-    background:     #14141588;
+    background:     #101010FF;
     background-alt: #252530FF;
-    foreground:     #CDCDCDFF;
-    selected:       #252530FF;
-    border:         #878787FF;
-    active:         #FF0000FF;
+    foreground:     #FFFFFFFF;
+    selected:       #A3D6A3FF;
+    border:         #272727FF;
+    active:         #A3D6A3FF;
     urgent:         #CD8647EE;
 
     border-colour:               var(border);
@@ -42,7 +42,7 @@ configuration {
     active-background:           var(active);
     active-foreground:           var(background);
     selected-normal-background:  var(selected);
-    selected-normal-foreground:  var(foreground);
+    selected-normal-foreground:  var(background);
     selected-urgent-background:  var(active);
     selected-urgent-foreground:  var(background);
     selected-active-background:  var(urgent);
