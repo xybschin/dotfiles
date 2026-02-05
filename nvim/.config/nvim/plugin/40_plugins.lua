@@ -142,11 +142,6 @@ now_if_args(function()
 	require("mason").setup()
 end)
 
--- now(function()
--- 	add("vague-theme/vague.nvim")
--- 	vim.cmd("colorscheme vague")
--- end)
-
 now(function()
 	add("oskarnurm/koda.nvim")
 	vim.cmd("colorscheme koda")
