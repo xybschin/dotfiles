@@ -13,7 +13,7 @@ config.window_decorations = 'RESIZE'
 config.window_close_confirmation = 'NeverPrompt'
 config.tab_max_width = 32
 
-config.window_padding = { left = '.5cell', top = '.3cell', bottom = '.3cell', right = '.5cell' }
+config.window_padding = { left = '.5cell', top = '0', bottom = '.3cell', right = '.5cell' }
 
 config.keys = {
   { key = 'l', mods = 'CTRL', action = wezterm.action.ShowLauncher },
