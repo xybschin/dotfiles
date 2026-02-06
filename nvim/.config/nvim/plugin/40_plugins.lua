@@ -110,8 +110,8 @@ now_if_args(function()
 	-- Uncomment and tweak the following `vim.lsp.enable()` call to enable servers.
 	vim.lsp.enable({
 		"lua_ls",
-		"csharp-ls",
 		"omnisharp",
+		"bashls",
 	})
 end)
 
@@ -129,7 +129,7 @@ later(function()
 		default_format_opts = {
 			lsp_format = "fallback",
 		},
-		formatters_by_ft = { lua = { "stylua" } },
+		formatters_by_ft = { lua = { "stylua" }, sh = { "shfmt" } },
 	})
 end)
 
