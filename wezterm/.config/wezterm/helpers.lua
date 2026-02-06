@@ -11,7 +11,7 @@ function module.apply_platform_settings(config)
 		config.default_prog = { "powershell.exe", "-NoLogo" }
 		local default_domains = wezterm.default_wsl_domains()
 		if #default_domains > 1 then
-			config.default_domain = default_domains[1]
+			config.default_domain = default_domains[1].name
 		end
 	end
 end
