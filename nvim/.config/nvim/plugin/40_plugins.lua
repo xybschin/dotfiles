@@ -143,7 +143,10 @@ now_if_args(function()
 end)
 
 now(function()
-	add("oskarnurm/koda.nvim")
+	add("xybschin/koda.nvim")
+	require("koda").setup({
+     auto = true
+  })
 	vim.cmd("colorscheme koda")
 end)
 
