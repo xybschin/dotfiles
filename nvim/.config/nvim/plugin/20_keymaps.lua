@@ -51,6 +51,7 @@ nmap("]p", '<Cmd>exe "put "  . v:register<CR>', "Paste Below")
 -- Add an entry if you create a new group.
 _G.Config.leader_group_clues = {
   { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
+  { mode = 'n', keys = '<Leader>c', desc = '+ClaudeCode' },
   { mode = 'n', keys = '<Leader>e', desc = '+Explore/Edit' },
   { mode = 'n', keys = '<Leader>f', desc = '+Find' },
   { mode = 'n', keys = '<Leader>g', desc = '+Git' },
@@ -247,10 +248,13 @@ nmap_leader('vv', '<Cmd>lua MiniVisits.add_label("core")<CR>',    'Add "core" la
 nmap_leader('vV', '<Cmd>lua MiniVisits.remove_label("core")<CR>', 'Remove "core" label')
 nmap_leader('vl', '<Cmd>lua MiniVisits.add_label()<CR>',          'Add label')
 nmap_leader('vL', '<Cmd>lua MiniVisits.remove_label()<CR>',       'Remove label')
--- stylua: ignore end
+
+nmap_leader('cc', '<Cmd>ClaudeCode<CR>', 'Claude Code')
+nmap_leader('cr', '<Cmd>ClaudeCodeResume<CR>', 'Claude Code: Resume')
 
 vim.api.nvim_create_user_command("W", "w", {})
 vim.api.nvim_create_user_command("Q", "q", {})
 vim.api.nvim_create_user_command("WQ", "wq", {})
 vim.api.nvim_create_user_command("Wq", "wq", {})
 vim.api.nvim_create_user_command("Ex", "Dired .", {})
+-- stylua: ignore end
