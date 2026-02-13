@@ -143,7 +143,10 @@ now_if_args(function()
 end)
 
 now(function()
-	add("oskarnurm/koda.nvim")
+	add("xybschin/koda.nvim")
+	require("koda").setup({
+		auto = true,
+	})
 	vim.cmd("colorscheme koda")
 end)
 
@@ -159,5 +162,20 @@ now(function()
 		show_hidden = true,
 		show_dot_dirs = true,
 		show_colors = true,
+	})
+end)
+
+later(function()
+	add({
+		source = "greggh/claude-code.nvim",
+		depends = { "nvim-lua/plenary.nvim" },
+	})
+
+	require("claude-code").setup({
+		window = {
+			split_ratio = 0.5,
+			position = "vertical",
+			hide_numbers = false,
+		},
 	})
 end)
