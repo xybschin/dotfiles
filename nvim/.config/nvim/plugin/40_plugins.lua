@@ -111,6 +111,7 @@ now_if_args(function()
 		"omnisharp",
 		"bashls",
 		"docker_language_server",
+		"gopls",
 	})
 end)
 
@@ -128,11 +129,16 @@ later(function()
 		default_format_opts = {
 			lsp_format = "fallback",
 		},
+		format_on_save = {
+			timeout_ms = 500,
+			lsp_format = "fallback",
+		},
 		formatters_by_ft = {
 			lua = { "stylua" },
 			sh = { "beautysh" },
 			yaml = { "yamlfmt" },
 			json = { "prettierd" },
+			go = { "gofmt", "goimports" },
 		},
 	})
 end)
