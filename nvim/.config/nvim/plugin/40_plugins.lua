@@ -110,7 +110,7 @@ now_if_args(function()
 		"lua_ls",
 		"omnisharp",
 		"bashls",
-    "docker_language_server",
+		"docker_language_server",
 	})
 end)
 
@@ -148,9 +148,7 @@ end)
 
 now(function()
 	add({ "https://github.com/oskarnurm/koda.nvim.git" })
-	require("koda").setup({
-		auto = true,
-	})
+	require("koda").setup()
 	vim.cmd("colorscheme koda")
 end)
 
