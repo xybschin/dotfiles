@@ -22,10 +22,9 @@
 
 -- To minimize the time until first screen draw, modules are enabled in two steps:
 -- - Step one enables everything that is needed for first draw with `now()`.
---   Sometimes is needed only if Neovim is started as `nvim -- path/to/file`.
+--   Sometimes needed only if Neovim is started as `nvim -- path/to/file`.
 -- - Everything else is delayed until the first draw with `later()`.
-local now, later = MiniDeps.now, MiniDeps.later
-local now_if_args = _G.Config.now_if_args
+local now, now_if_args, later = Config.now, Config.now_if_args, Config.later
 
 -- Step one ===================================================================
 -- Enable 'miniwinter' color scheme. It comes with 'mini.nvim' and uses 'mini.hues'.

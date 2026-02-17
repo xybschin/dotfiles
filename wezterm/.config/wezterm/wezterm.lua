@@ -12,6 +12,7 @@ config.use_fancy_tab_bar = false
 config.window_decorations = 'RESIZE'
 config.window_close_confirmation = 'NeverPrompt'
 config.tab_max_width = 32
+config.adjust_window_size_when_changing_font_size = false
 
 config.window_padding = { left = '.5cell', top = '0', bottom = '.3cell', right = '.5cell' }
 
