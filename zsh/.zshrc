@@ -11,7 +11,7 @@ setopt INC_APPEND_HISTORY_TIME
 
 export PATH="$PATH:$HOME/.local/bin"
 
-if fzf 2>/dev/null; then
+if [[ `which fzf &>/dev/null && echo $?` != 0 ]]; then
   source <(fzf --zsh)
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 	  --highlight-line \
