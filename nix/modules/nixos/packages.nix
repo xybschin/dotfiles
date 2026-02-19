@@ -9,12 +9,13 @@
     curl
     wget
     neovim
+    wezterm
     ripgrep
     fd
     fzf
     lazygit
-    htop
-    jq
+    ducker
+    btop
     nerd-fonts.jetbrains-mono
   ];
 }

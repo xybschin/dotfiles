@@ -110,6 +110,7 @@ now_if_args(function()
 		"lua_ls",
 		"omnisharp",
 		"bashls",
+		"nil",
 		"docker_language_server",
 	})
 end)
